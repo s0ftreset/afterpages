@@ -1,146 +1,233 @@
 (() => {
   'use strict';
 
-  const archive = window.ARCHIVE;
+  const data = window.FOXGLOVE;
   const app = document.querySelector('#app');
-  const scenes = Array.isArray(archive?.scenes) ? archive.scenes : [];
+  const toast = document.querySelector('#toast');
+  const allMembers = data.bands.flatMap(band => band.members.map(member => ({ ...member, band })));
+
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, char => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[char]);
 
-  const uniqueStories = [...new Set(scenes.map(scene => scene.story).filter(Boolean))];
-  const state = { story: 'All stories', query: '' };
-
-  document.querySelector('#year').textContent = new Date().getFullYear();
-
-  function dateLabel(value) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return '';
-    const date = new Date(`${value}T12:00:00Z`);
-    return Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    window.clearTimeout(showToast.timer);
+    showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 2400);
   }
 
-  function updateNav(route) {
-    for (const id of ['nav-all', 'nav-about']) document.getElementById(id).removeAttribute('aria-current');
-    document.getElementById(route === 'about' ? 'nav-about' : 'nav-all').setAttribute('aria-current', 'page');
+  function setPage(title, nav = '') {
+    document.title = `${title} — FOXGLOVE`;
+    document.body.classList.remove('archive-open');
+    document.querySelectorAll('[data-nav]').forEach(link => {
+      const active = link.dataset.nav === nav;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
   }
 
-  function card(scene) {
-    return `<a class="scene-card" href="#/scene/${encodeURIComponent(scene.id)}" aria-label="Read ${escapeHTML(scene.title)} from ${escapeHTML(scene.story)}">
-      <div class="card-top"><span>${escapeHTML(scene.story)}</span><span>${escapeHTML(scene.status === 'preview' ? 'PREVIEW' : scene.category)}</span></div>
-      <h3>${escapeHTML(scene.title)}</h3>
-      <p>${escapeHTML(scene.excerpt)}</p>
-      <div class="card-bottom"><span>${escapeHTML(scene.category)} &nbsp; · &nbsp; ${escapeHTML(scene.readMinutes || 1)} MIN READ</span><strong>READ SCENE &nbsp; ↗</strong></div>
+  function negative(label, index = 0, className = '') {
+    return `<div class="negative negative-${(index % 6) + 1} ${className}" aria-label="Photo placeholder: ${escapeHTML(label)}">
+      <span class="negative-code">FG / ${String(index + 1).padStart(3, '0')}</span>
+      <span class="negative-label">${escapeHTML(label)}</span>
+      <span class="negative-state">NEGATIVE AWAITING SCAN</span>
+    </div>`;
+  }
+
+  function contactPhoto(item, index) {
+    const media = item.image
+      ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)} — ${escapeHTML(item.place)}, ${escapeHTML(item.year)}" loading="lazy">`
+      : negative(`${item.place}, ${item.year}`, index, 'contact-negative');
+    return `<figure class="contact-photo tilt-${(index % 5) + 1}">
+      ${media}
+      <figcaption>
+        <span>${escapeHTML(item.band)} / ${escapeHTML(item.place)} / ${escapeHTML(item.year)}</span>
+        <strong>${escapeHTML(item.title)}</strong>
+        <p>${escapeHTML(item.caption)}</p>
+        <em>— ${escapeHTML(item.note)}</em>
+        <small>PHOTO: IRIS MARLOWE / ${escapeHTML(item.id.toUpperCase())}</small>
+      </figcaption>
+    </figure>`;
+  }
+
+  function bandTeaser(band, index) {
+    return `<a class="band-teaser band-${index}" href="#/band/${band.id}">
+      <div class="band-teaser-copy">
+        <span class="label">${escapeHTML(band.desk)} / ${escapeHTML(band.years)}</span>
+        <h2>${escapeHTML(band.name)}</h2>
+        <p>${escapeHTML(band.summary)}</p>
+        <strong>OPEN THE FILE <span aria-hidden="true">↗</span></strong>
+      </div>
+      ${negative(`${band.name} / live`, index + 1, 'band-negative')}
+      <span class="scrawl scrawl-${index}">${escapeHTML(band.irisNote)}</span>
     </a>`;
   }
 
-  function updateCards() {
-    const query = state.query.trim().toLocaleLowerCase();
-    const filtered = scenes.filter(scene => {
-      const matchesStory = state.story === 'All stories' || scene.story === state.story;
-      const haystack = [scene.title, scene.story, scene.characters, scene.category, scene.excerpt, scene.body].join(' ').toLocaleLowerCase();
-      return matchesStory && (!query || haystack.includes(query));
-    });
-    document.querySelector('#result-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'SCENE' : 'SCENES'} FOUND`;
-    document.querySelector('#scene-results').innerHTML = filtered.length
-      ? `<div class="scene-grid">${filtered.map(card).join('')}</div>`
-      : `<div class="empty-state"><h3>Nothing in these margins.</h3><p>Try another story or search term.</p><button id="reset-search" type="button">Clear filters</button></div>`;
-    document.querySelector('#reset-search')?.addEventListener('click', () => {
-      state.story = 'All stories';
-      state.query = '';
-      document.querySelector('#scene-search').value = '';
-      document.querySelectorAll('.filter').forEach(button => button.classList.toggle('active', button.dataset.story === state.story));
-      updateCards();
-    });
-  }
-
-  function home() {
-    document.title = `${archive.siteTitle} · ${archive.author}`;
-    updateNav('home');
-    app.innerHTML = `<section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><span class="eyebrow">AN ARCHIVE OF THE IN-BETWEEN</span>
-        <h1 id="hero-title">The <em>After</em>pages.</h1>
-        <p>${escapeHTML(archive.intro)}</p>
-        <a class="primary-link" href="#archive">ENTER THE ARCHIVE <span aria-hidden="true">↗</span></a>
+  function frontPage() {
+    setPage('Front Page', 'front');
+    const nsh = data.bands[0];
+    const gt = data.bands[1];
+    app.innerHTML = `<section class="cover-story">
+      <div class="cover-kicker"><span>COVER STORY</span><span>WORDS & PHOTOS: IRIS MARLOWE</span></div>
+      <div class="cover-grid">
+        <div class="cover-copy">
+          <p class="overline">NO SAINTS HERE × GLASS TEETH</p>
+          <h1>Teeth, saints &amp; everything the press got <i>wrong.</i></h1>
+          <p class="cover-deck">Two bands. One decade of shared rooms, shared bills, old friendships, worse breakups, and a rivalry that always photographed cleaner than it lived.</p>
+          <div class="byline"><span>THE FOXGLOVE ARCHIVE</span><span>2015—2026</span></div>
+        </div>
+        <div class="cover-collage" aria-label="Archival photo placeholders">
+          ${negative('Side-stage / unknown venue', 0, 'cover-photo cover-photo-a')}
+          ${negative('Load-out / 2:13 a.m.', 3, 'cover-photo cover-photo-b')}
+          <span class="tape tape-a" aria-hidden="true"></span><span class="tape tape-b" aria-hidden="true"></span>
+          <p class="hand-note">the feud photographs<br>better than the truth →</p>
+        </div>
       </div>
-      <div class="hero-art" aria-hidden="true"><span class="art-top">01 / OPEN THE BOOK</span><span class="art-bottom">THE STORY CONTINUES ↗</span></div>
     </section>
-    <div class="ticker"><span>EXTRA SCENES <b>✳</b> LOST CHAPTERS <b>✳</b> QUIET MOMENTS</span><span>${scenes.length} SCENES / ${uniqueStories.length} STORIES</span></div>
-    <section class="archive-section" id="archive" aria-labelledby="archive-heading">
-      <div class="section-heading"><div><span class="eyebrow">THE COLLECTION</span><h2 id="archive-heading">Read between <i>the lines.</i></h2></div><p>Choose a story. Find a moment. Stay a little longer.</p></div>
-      <div class="controls"><div class="filters" role="group" aria-label="Filter by story">
-        ${['All stories', ...uniqueStories].map(story => `<button class="filter${state.story === story ? ' active' : ''}" type="button" data-story="${escapeHTML(story)}" aria-pressed="${state.story === story}">${escapeHTML(story)}</button>`).join('')}
-      </div><label class="search"><input id="scene-search" type="search" placeholder="Search scenes, characters…" aria-label="Search scenes" value="${escapeHTML(state.query)}"><span aria-hidden="true">⌕</span></label></div>
-      <p class="result-count" id="result-count" aria-live="polite"></p><div id="scene-results"></div>
-    </section>`;
-    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
-      state.story = button.dataset.story;
-      document.querySelectorAll('.filter').forEach(item => {
-        const active = item === button;
-        item.classList.toggle('active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
-      updateCards();
-    }));
-    document.querySelector('#scene-search').addEventListener('input', event => {
-      state.query = event.target.value;
-      updateCards();
-    });
-    document.querySelector('a[href="#archive"]').addEventListener('click', event => {
-      event.preventDefault();
-      document.querySelector('#archive').scrollIntoView({ behavior: 'smooth' });
-    });
-    updateCards();
+
+    <div class="marquee" aria-hidden="true"><span>NO CLEAN SIGNAL ✦ NO CLEAN SAINTS ✦ NO CLEAN STORY ✦ </span><span>NO CLEAN SIGNAL ✦ NO CLEAN SAINTS ✦ NO CLEAN STORY ✦ </span></div>
+
+    <section class="band-files" aria-labelledby="band-files-title">
+      <div class="section-slug"><span>01 / THE BANDS</span><h2 id="band-files-title">Choose your damage.</h2><p>Profiles, field notes, old photographs, and the evidence left after load-out.</p></div>
+      <div class="band-teaser-grid">${bandTeaser(nsh, 0)}${bandTeaser(gt, 1)}</div>
+    </section>
+
+    <section class="rivalry-file">
+      <div class="stamp">PUBLIC NARRATIVE<br><b>FEUD</b></div>
+      <div><span class="label">FOXGLOVE CORRECTION / FILED REPEATEDLY</span><h2>The mythology is easier than the history.</h2></div>
+      <blockquote>Old covers scream enemy bands. The photographs show borrowed gear, shared cigarettes, somebody standing side-stage, and people who knew each other before there was anything worth competing over.</blockquote>
+      <p class="margin-note">a rivalry is just a relationship with a publicist.</p>
+    </section>
+
+    <section class="dispatch-section" aria-labelledby="dispatch-title">
+      <div class="section-slug"><span>02 / ELSEWHERE</span><h2 id="dispatch-title">After-hours dispatches.</h2><p>The adjacent lives Iris kept finding through the viewfinder.</p></div>
+      <div class="dispatch-grid">${data.dispatches.map((item, index) => `<a class="dispatch-card dispatch-${index}" href="#/dispatch/${item.id}">
+        <span class="label">${escapeHTML(item.label)}</span><span class="dispatch-number">0${index + 1}</span>
+        <h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.subtitle)}</p><strong>READ FIELD NOTES ↗</strong>
+      </a>`).join('')}</div>
+    </section>
+
+    <section class="issue-note"><span class="fox-mark" aria-hidden="true">✦</span><p>${escapeHTML(data.strapline)}</p><strong>— IRIS</strong></section>`;
   }
 
-  function reader(scene) {
-    document.title = `${scene.title} · ${archive.siteTitle}`;
-    updateNav('home');
-    const paragraphs = String(scene.body || '').trim().split(/\n\s*\n/).filter(Boolean);
-    const next = scenes[(scenes.indexOf(scene) + 1) % scenes.length];
-    app.innerHTML = `<article class="reader">
-      <a class="back-link" href="#/">← BACK TO THE ARCHIVE</a>
-      <header class="reader-header"><span class="eyebrow">${escapeHTML(scene.story)} / ${escapeHTML(scene.category)}</span>
-        <h1>${escapeHTML(scene.title)}</h1><p class="reader-deck">${escapeHTML(scene.excerpt)}</p>
-        <div class="reader-meta"><span>${escapeHTML(dateLabel(scene.date))}</span><span>${escapeHTML(scene.readMinutes || 1)} MIN READ</span><span>${escapeHTML(scene.status === 'preview' ? 'PREVIEW' : 'FULL SCENE')}</span></div>
+  function memberCard(member, index) {
+    return `<a class="member-card" href="#/person/${member.id}">
+      <div class="member-photo">${negative(`${member.name} / portrait`, index + 1)}</div>
+      <span class="member-index">${String(index + 1).padStart(2, '0')}</span>
+      <span class="label">${escapeHTML(member.marker)}</span>
+      <h3>${escapeHTML(member.name)}</h3>
+      <p>${escapeHTML(member.role)}</p>
+      <strong>OPEN DOSSIER ↗</strong>
+    </a>`;
+  }
+
+  function bandPage(band) {
+    setPage(band.name, band.id);
+    const photos = data.archive.filter(item => item.band.includes(band.short) || item.band === band.name).slice(0, 3);
+    app.innerHTML = `<article class="band-page">
+      <header class="band-hero">
+        <div class="band-title-block"><span class="label">${escapeHTML(band.desk)} / ${escapeHTML(band.years)}</span><h1>${escapeHTML(band.name)}</h1><p>${escapeHTML(band.pullQuote)}</p></div>
+        ${negative(`${band.name} / full band`, band.id === 'glass-teeth' ? 4 : 1, 'band-hero-negative')}
+        <p class="hand-note band-hand">${escapeHTML(band.irisNote)}</p>
       </header>
-      <div class="reader-layout"><aside class="reader-side"><div><p>FEATURING</p><strong>${escapeHTML(scene.characters || '—')}</strong></div>
-        <div class="reader-tools" aria-label="Reading settings"><button type="button" id="smaller" aria-label="Decrease text size">A−</button><button type="button" id="larger" aria-label="Increase text size">A+</button></div>
-      </aside><div><div class="reader-copy" id="reader-copy">
-        ${scene.contentNote ? `<div class="content-note"><strong>CONTENT NOTE:</strong> ${escapeHTML(scene.contentNote)}</div>` : ''}
-        ${paragraphs.map(paragraph => `<p class="${paragraph.startsWith('DEMO SCENE') ? 'demo-note' : ''}">${escapeHTML(paragraph).replace(/\n/g, '<br>')}</p>`).join('')}
-        <div class="end-mark" aria-hidden="true">✳</div>
-      </div>${next && next !== scene ? `<a class="next-scene" href="#/scene/${encodeURIComponent(next.id)}"><span>UP NEXT <strong>${escapeHTML(next.title)}</strong></span><span aria-hidden="true">↗</span></a>` : ''}</div></div>
+      <section class="band-intro"><span class="drop-number">${band.members.length}</span><div><span class="label">ON THE RECORD</span><p>${escapeHTML(band.summary)}</p></div><blockquote>${escapeHTML(band.pullQuote)}</blockquote></section>
+      <section class="lineup" aria-labelledby="lineup-title"><div class="section-slug"><span>THE LINEUP</span><h2 id="lineup-title">Individual files.</h2><p>Public facts, private observations, and photographs they approved under protest.</p></div><div class="member-grid">${band.members.map(memberCard).join('')}</div></section>
+      <section class="band-contact"><div class="section-slug"><span>FROM THE CONTACT SHEETS</span><h2>Things the press release missed.</h2></div><div class="mini-contact-grid">${photos.map(contactPhoto).join('') || data.archive.slice(0, 2).map(contactPhoto).join('')}</div></section>
     </article>`;
-    const copy = document.querySelector('#reader-copy');
-    let size = 19;
-    try { size = Math.max(16, Math.min(25, Number(localStorage.getItem('afterpages-font')) || 19)); } catch { /* optional preference */ }
-    const setSize = value => {
-      size = Math.max(16, Math.min(25, value));
-      copy.style.setProperty('--reading-size', `${size}px`);
-      try { localStorage.setItem('afterpages-font', size); } catch { /* optional preference */ }
-    };
-    setSize(size);
-    document.querySelector('#smaller').addEventListener('click', () => setSize(size - 1));
-    document.querySelector('#larger').addEventListener('click', () => setSize(size + 1));
   }
 
-  function about() {
-    document.title = `About · ${archive.siteTitle}`;
-    updateNav('about');
-    app.innerHTML = `<section class="about"><div><span class="eyebrow">A NOTE FROM THE MARGINS</span><h1>More to <em>tell.</em></h1><a class="primary-link" href="#/">EXPLORE THE SCENES <span aria-hidden="true">↗</span></a></div>
-      <div class="about-copy"><p>${escapeHTML(archive.tagline)}</p><p>This is ${escapeHTML(archive.author)}’s collection of scenes that live just outside the main story: the afterthoughts, side roads, missing conversations, and alternate points of view.</p><p>Pick a world, open a scene, and make yourself at home.</p></div></section>`;
+  function personPage(record) {
+    const { band, ...person } = record;
+    setPage(person.name, band.id);
+    const peers = band.members.filter(member => member.id !== person.id);
+    app.innerHTML = `<article class="dossier">
+      <a class="back-link" href="#/band/${band.id}">← RETURN TO ${escapeHTML(band.name.toUpperCase())}</a>
+      <header class="dossier-header">
+        <div class="dossier-title"><span class="label">FOXGLOVE SUBJECT FILE / ${escapeHTML(band.short)}</span><h1>${escapeHTML(person.name)}</h1><p>${escapeHTML(person.deck)}</p></div>
+        <div class="dossier-portrait">${negative(`${person.name} / portrait`, allMembers.findIndex(item => item.id === person.id))}<span class="tape tape-c" aria-hidden="true"></span></div>
+      </header>
+      <div class="dossier-body">
+        <aside class="file-stats"><span class="red-stamp">ON FILE</span><dl><dt>AGE</dt><dd>${escapeHTML(person.age)}</dd><dt>BAND</dt><dd>${escapeHTML(band.name)}</dd><dt>ROLE</dt><dd>${escapeHTML(person.role)}</dd><dt>FILE MARKER</dt><dd>${escapeHTML(person.marker)}</dd></dl></aside>
+        <section class="profile-copy"><span class="label">IRIS MARLOWE / FIELD NOTES</span><p class="lead">${escapeHTML(person.deck)}</p><p>${escapeHTML(person.bio)}</p><div class="fact-strips">${person.facts.map(fact => `<span>${escapeHTML(fact)}</span>`).join('')}</div><blockquote>“${escapeHTML(person.iris)}”<small>— handwritten in the contact-sheet envelope</small></blockquote></section>
+      </div>
+      <nav class="peer-files" aria-label="More band member files"><span>OTHER ${escapeHTML(band.short)} FILES</span>${peers.map(peer => `<a href="#/person/${peer.id}">${escapeHTML(peer.name)} ↗</a>`).join('')}</nav>
+    </article>`;
+  }
+
+  function dispatchPage(item) {
+    setPage(item.title, item.id);
+    const related = data.archive.find(entry => entry.band === item.title || (item.id === 'good-company' && entry.place === 'Good Company'));
+    app.innerHTML = `<article class="dispatch-page">
+      <a class="back-link" href="#/">← RETURN TO THE FRONT PAGE</a>
+      <header class="dispatch-hero"><span class="label">${escapeHTML(item.label)} / FOXGLOVE SIDE DESK</span><h1>${escapeHTML(item.title)}</h1><p>${escapeHTML(item.subtitle)}</p></header>
+      <div class="dispatch-layout">
+        <div class="dispatch-image">${negative(`${item.title} / after hours`, data.dispatches.indexOf(item) + 3)}<span class="tape tape-d" aria-hidden="true"></span></div>
+        <div class="dispatch-copy"><blockquote>${escapeHTML(item.pull)}</blockquote><p>${escapeHTML(item.copy)}</p><div class="dispatch-notes">${item.notes.map(note => `<span>${escapeHTML(note)}</span>`).join('')}</div><p class="hand-note">not everything important happens on a stage.</p></div>
+      </div>
+      ${related ? `<section class="single-contact"><span class="label">FROM THE UNPUBLISHED ROLL</span>${contactPhoto(related, data.archive.indexOf(related))}</section>` : ''}
+    </article>`;
+  }
+
+  function archivePage() {
+    setPage('Contact Sheet 13');
+    document.body.classList.add('archive-open');
+    app.innerHTML = `<article class="secret-archive">
+      <header><span class="red-stamp">NOT FOR PUBLICATION</span><p class="label">FOXGLOVE / BOX 13 / UNFILED NEGATIVES</p><h1>You weren’t supposed to find this.</h1><p>Good. Curiosity is the only useful subscription model.</p></header>
+      <div class="archive-warning"><b>IRIS'S RULE:</b> Context stays attached. Nobody gets reduced to a face, a rumor, or somebody else's bad night.</div>
+      <section class="contact-sheet">${data.archive.map(contactPhoto).join('')}</section>
+      <div class="archive-end"><span>✦</span><p>More negatives are still drying.</p><a href="#/">PUT IT BACK WHERE YOU FOUND IT →</a></div>
+    </article>`;
+  }
+
+  function aboutPage() {
+    setPage('Colophon', 'about');
+    app.innerHTML = `<article class="colophon">
+      <div><span class="label">ABOUT THIS MESS</span><h1>Rolling Stone got shoved down a staircase by a Xerox machine.</h1></div>
+      <div class="colophon-copy"><p class="lead">FOXGLOVE is Iris Marlowe's independent zine and working archive: grainy documentary photography, bad venue lighting, dark botanical marginalia, and the moments between the moments everybody else publishes.</p><p>It covers No Saints Here and Glass Teeth without pretending their history can be flattened into rival headlines. The side desk follows Dead Air, Good Company, Rory Deveraux, and anything else worth keeping after the room empties.</p><blockquote>Nothing is neutral. Especially not a photograph.</blockquote><dl><dt>EDITOR / PHOTOGRAPHER</dt><dd>Iris Marlowe</dd><dt>FORMAT</dt><dd>Photocopy, film, web, whatever survives</dd><dt>RATINGS</dt><dd>Crossed out on principle</dd></dl></div>
+    </article>`;
+  }
+
+  function notFound() {
+    setPage('Lost Page');
+    app.innerHTML = `<section class="lost-page"><span>404 / BAD NEGATIVE</span><h1>This page fell out of the zine.</h1><a href="#/">GO BACK TO THE FRONT PAGE →</a></section>`;
   }
 
   function route() {
     const path = decodeURIComponent(location.hash.slice(1) || '/');
-    if (path === '/about') about();
-    else if (path.startsWith('/scene/')) {
-      const scene = scenes.find(item => item.id === path.slice(7));
-      if (scene) reader(scene);
-      else { home(); document.querySelector('#archive').scrollIntoView(); }
-    } else home();
-    if (path !== '/' && path !== '') window.scrollTo({ top: 0, behavior: 'instant' });
+    if (path === '/') frontPage();
+    else if (path === '/about') aboutPage();
+    else if (path === '/archive') archivePage();
+    else if (path.startsWith('/band/')) {
+      const band = data.bands.find(item => item.id === path.slice(6));
+      band ? bandPage(band) : notFound();
+    } else if (path.startsWith('/person/')) {
+      const person = allMembers.find(item => item.id === path.slice(8));
+      person ? personPage(person) : notFound();
+    } else if (path.startsWith('/dispatch/')) {
+      const dispatch = data.dispatches.find(item => item.id === path.slice(10));
+      dispatch ? dispatchPage(dispatch) : notFound();
+    } else notFound();
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
+
+  document.querySelector('#issue-label').textContent = data.issue;
+  document.querySelector('#archive-key').addEventListener('click', () => {
+    showToast('CONTACT SHEET 13 RELEASED');
+    window.setTimeout(() => { location.hash = '#/archive'; }, 220);
+  });
+
+  let typed = '';
+  window.addEventListener('keydown', event => {
+    if (event.metaKey || event.ctrlKey || event.altKey || event.target.matches('input, textarea')) return;
+    if (/^[a-z]$/i.test(event.key)) typed = (typed + event.key.toUpperCase()).slice(-4);
+    if (typed === 'IRIS') {
+      typed = '';
+      showToast('IRIS LEFT THE DARKROOM UNLOCKED');
+      window.setTimeout(() => { location.hash = '#/archive'; }, 300);
+    }
+  });
 
   window.addEventListener('hashchange', route);
   route();
