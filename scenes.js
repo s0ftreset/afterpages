@@ -536,7 +536,9 @@ window.FOXGLOVE = {
 
   archive: [
     {
-      id: "fg-001", image: "", band: "No Saints Here", place: "Cleveland", year: "2019",
+      id: "fg-001", image: "assets/photos/nsh-cleveland-gas-station.webp",
+      imageAlt: "No Saints Here exhausted beside their van at a wet gas station late at night, with Roman in the foreground and Jett fixing a cable",
+      band: "No Saints Here", place: "Cleveland", year: "2019",
       title: "Twenty-six hours awake",
       caption: "Roman had been awake for twenty-six hours. Jett broke the same cable twice. Astrid threatened to leave them all at the gas station.",
       note: "this was not, despite three interviews claiming otherwise, detroit."
