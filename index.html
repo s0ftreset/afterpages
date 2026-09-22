@@ -3,38 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#161311">
-  <meta name="description" content="Extra scenes, lost chapters, and the moments between stories by Junipurrr.">
-  <title>Afterpages · Junipurrr</title>
+  <meta name="theme-color" content="#171411">
+  <meta name="description" content="FOXGLOVE — Iris Marlowe's independent archive of No Saints Here, Glass Teeth, Dead Air, Good Company, and Rory Deveraux.">
+  <title>FOXGLOVE — Iris Marlowe</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="scenes.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="#/" aria-label="Afterpages, home">
-        <span class="brand-mark" aria-hidden="true">✳</span>
-        <span class="brand-type">JUNIPURRR<span class="brand-sub"> / THE AFTERPAGES</span></span>
-      </a>
-      <nav class="header-nav" aria-label="Main navigation">
-        <a href="#/" id="nav-all">THE ARCHIVE</a>
-        <a href="#/about" id="nav-about">ABOUT</a>
-      </nav>
-      <span class="header-end" aria-hidden="true">EST. AFTER DARK &nbsp; ↗</span>
-    </header>
+  <a class="skip-link" href="#main">Skip to the issue</a>
+  <div class="paper-noise" aria-hidden="true"></div>
 
-    <main id="main" tabindex="-1">
-      <div id="app"></div>
-    </main>
+  <header class="site-header">
+    <div class="utility-strip">
+      <span>INDEPENDENT / UNAUTHORIZED / STILL HERE</span>
+      <span id="issue-label">NO. 13 / SEPTEMBER 2026</span>
+      <span>EDITED BY IRIS MARLOWE</span>
+    </div>
+    <div class="masthead-row">
+      <a class="masthead" href="#/" aria-label="Foxglove front page">FOXGLOVE<span aria-hidden="true">✦</span></a>
+      <p>Music. Film. Bad decisions.<br>Printed badly on purpose.</p>
+    </div>
+    <nav class="main-nav" aria-label="Issue sections">
+      <a href="#/" data-nav="front">Front page</a>
+      <a href="#/band/no-saints-here" data-nav="no-saints-here">No Saints Here</a>
+      <a href="#/band/glass-teeth" data-nav="glass-teeth">Glass Teeth</a>
+      <a href="#/dispatch/dead-air" data-nav="dead-air">Dead Air</a>
+      <a href="#/dispatch/good-company" data-nav="good-company">Good Company</a>
+      <a href="#/dispatch/rory" data-nav="rory">Rory</a>
+      <a href="#/about" data-nav="about">Colophon</a>
+    </nav>
+  </header>
 
-    <footer class="site-footer">
-      <span>© <span id="year"></span> JUNIPURRR</span>
-      <span>THE SCENES THAT WOULDN’T STAY IN THE DRAFTS.</span>
-      <a href="#/">BACK TO THE ARCHIVE ↑</a>
-    </footer>
-  </div>
+  <main id="main" tabindex="-1">
+    <div id="app"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>FOXGLOVE</strong>
+      <span>PHOTOGRAPHS & WORDS: IRIS MARLOWE</span>
+    </div>
+    <p>Nothing here was clean when I found it.</p>
+    <button class="contact-sheet-key" id="archive-key" type="button" aria-label="Open contact sheet thirteen">
+      CONTACT SHEET 13 / DO NOT INDEX <span aria-hidden="true">↗</span>
+    </button>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
