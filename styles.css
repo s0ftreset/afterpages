@@ -226,7 +226,7 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .fracture-copy { max-width: 920px; padding: clamp(24px, 4vw, 52px); }
 .fracture-copy > p { margin: 0 0 22px; font: 18px/1.68 var(--serif); color: var(--paper-dark); }
 .fracture-copy > blockquote { margin: 30px 0; padding: 20px 25px; border-left: 4px solid #9b899d; background: #0c0b0d; font: italic 22px/1.45 var(--serif); color: #e4dce7; }
-.fracture-copy .warning-tape { max-width: none; margin: 0 0 35px; padding: 11px 17px; background: repeating-linear-gradient(-45deg, #d4c2d8 0 14px, #201a22 14px 28px); color: #0b090c; font: 900 12px/1.4 var(--mono); letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+.fracture-copy .warning-tape { max-width: none; margin: 0 0 35px; padding: 11px 17px; background: repeating-linear-gradient(-45deg, #e0d2e3 0 14px, #8f8192 14px 28px); color: #0b090c; font: 900 12px/1.4 var(--mono); letter-spacing: .08em; text-align: center; text-transform: uppercase; }
 .vault-contents > footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #514b54; color: #8f8792; font: 700 9px var(--mono); letter-spacing: .1em; text-align: right; }
 .peer-files { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; padding: 25px; border-block: 1px solid var(--line); }
 .peer-files > span { margin-right: auto; font: 700 10px var(--mono); color: var(--rust); }
