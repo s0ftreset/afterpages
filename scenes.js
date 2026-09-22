@@ -27,6 +27,9 @@ window.FOXGLOVE = {
         {
           id: "astrid-vale",
           name: "Astrid Vale",
+          image: "assets/photos/astrid-vale.webp",
+          imageAlt: "Close backstage portrait of Astrid Vale with long silver hair, dark makeup, tattoos, and a cigarette",
+          imagePosition: "50% 34%",
           age: "26",
           role: "Lead vocals / occasional rhythm guitar",
           marker: "VOICE / TEETH / MATCHSTICK",
@@ -38,6 +41,9 @@ window.FOXGLOVE = {
         {
           id: "forrest-hale",
           name: "Forrest Hale",
+          image: "assets/photos/forrest-hale.webp",
+          imageAlt: "Close backstage portrait of Forrest Hale with tousled black hair, piercings, chains, and tattooed arms",
+          imagePosition: "50% 32%",
           age: "28",
           role: "Lead guitar / backing vocals / songwriter",
           marker: "DEAD QUIET / LOUD HANDS",
@@ -49,6 +55,9 @@ window.FOXGLOVE = {
         {
           id: "jett-maddox",
           name: "Jett Maddox",
+          image: "assets/photos/jett-maddox.webp",
+          imageAlt: "Close backstage portrait of Jett Maddox with wet bleached hair, piercings, layered chains, and extensive tattoos",
+          imagePosition: "50% 42%",
           age: "27",
           role: "Rhythm guitar / occasional vocals",
           marker: "BAD IDEA / EXCELLENT TIMING",
@@ -60,6 +69,9 @@ window.FOXGLOVE = {
         {
           id: "roman-cross",
           name: "Roman Cross",
+          image: "assets/photos/roman-cross.webp",
+          imageAlt: "Close backstage portrait of Roman Cross with wet black hair, dark facial hair, and tattooed arms and hands",
+          imagePosition: "50% 31%",
           age: "29",
           role: "Bass / backing vocals",
           marker: "LOW END / LAST WARNING",
@@ -71,6 +83,9 @@ window.FOXGLOVE = {
         {
           id: "dahlia-gutierrez",
           name: "Dahlia “Dolly” Gutierrez",
+          image: "assets/photos/dahlia-gutierrez.webp",
+          imageAlt: "Close backstage portrait of Dolly Gutierrez with black space buns, silver piercings, tattoos, and a cherry",
+          imagePosition: "50% 31%",
           age: "26",
           role: "Drums / occasional backing vocals",
           marker: "HEARTBEAT / TROUBLEMAKER",

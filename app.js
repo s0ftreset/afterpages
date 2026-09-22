@@ -46,6 +46,16 @@
     </div>`;
   }
 
+  function portraitPhoto(person, index = 0, className = '') {
+    if (!person.image) return negative(`${person.name} / portrait`, index, className);
+    return `<div class="negative negative-${(index % 6) + 1} has-photo ${className}">
+      <img src="${escapeHTML(person.image)}" alt="${escapeHTML(person.imageAlt || person.name)}" loading="lazy" style="object-position:${escapeHTML(person.imagePosition || '50% 35%')}">
+      <span class="negative-code">FG / PORTRAIT / ${String(index + 1).padStart(2, '0')}</span>
+      <span class="negative-label">${escapeHTML(person.name)} / IRIS MARLOWE</span>
+      <span class="negative-state">SUBJECT FILE</span>
+    </div>`;
+  }
+
   function contactPhoto(item, index) {
     const media = item.image
       ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)} — ${escapeHTML(item.place)}, ${escapeHTML(item.year)}" loading="lazy">`
@@ -124,7 +134,7 @@
 
   function memberCard(member, index) {
     return `<a class="member-card" href="#/person/${member.id}">
-      <div class="member-photo">${negative(`${member.name} / portrait`, index + 1)}</div>
+      <div class="member-photo">${portraitPhoto(member, index + 1)}</div>
       <span class="member-index">${String(index + 1).padStart(2, '0')}</span>
       <span class="label">${escapeHTML(member.marker)}</span>
       <h3>${escapeHTML(member.name)}</h3>
@@ -156,7 +166,7 @@
       <a class="back-link" href="#/band/${band.id}">← RETURN TO ${escapeHTML(band.name.toUpperCase())}</a>
       <header class="dossier-header">
         <div class="dossier-title"><span class="label">FOXGLOVE SUBJECT FILE / ${escapeHTML(band.short)}</span><h1>${escapeHTML(person.name)}</h1><p>${escapeHTML(person.deck)}</p></div>
-        <div class="dossier-portrait">${negative(`${person.name} / portrait`, allMembers.findIndex(item => item.id === person.id))}<span class="tape tape-c" aria-hidden="true"></span></div>
+        <div class="dossier-portrait">${portraitPhoto(person, allMembers.findIndex(item => item.id === person.id))}<span class="tape tape-c" aria-hidden="true"></span></div>
       </header>
       <div class="dossier-body">
         <aside class="file-stats"><span class="red-stamp">ON FILE</span><dl><dt>AGE</dt><dd>${escapeHTML(person.age)}</dd><dt>BAND</dt><dd>${escapeHTML(band.name)}</dd><dt>ROLE</dt><dd>${escapeHTML(person.role)}</dd><dt>FILE MARKER</dt><dd>${escapeHTML(person.marker)}</dd></dl></aside>

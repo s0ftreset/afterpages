@@ -131,9 +131,9 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .band-intro p { margin: 12px 0 0; font: 20px/1.55 var(--serif); color: var(--paper-dark); }
 .band-intro blockquote { margin: 0; padding-left: 25px; border-left: 4px solid var(--blood); font: italic 25px/1.4 var(--serif); }
 .member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.member-card { position: relative; display: flex; flex-direction: column; min-height: 530px; padding: 18px; border: 1px solid var(--line); color: inherit; text-decoration: none; background: var(--black-2); }
+.member-card { position: relative; display: flex; flex-direction: column; min-height: 650px; padding: 18px; border: 1px solid var(--line); color: inherit; text-decoration: none; background: var(--black-2); }
 .member-card:hover { border-color: var(--rust); transform: translateY(-4px); }
-.member-photo .negative { min-height: 265px; border-width: 5px; border-bottom-width: 23px; box-shadow: none; }
+.member-photo .negative { min-height: 0; aspect-ratio: 4 / 5; border-width: 5px; border-bottom-width: 23px; box-shadow: none; }
 .member-index { position: absolute; z-index: 4; top: 24px; right: 25px; padding: 5px; background: var(--paper); color: var(--ink); font: 700 12px var(--mono); }
 .member-card > .label { margin-top: 20px; }
 .member-card h3 { margin: 10px 0 8px; font: 400 clamp(33px, 3.4vw, 53px)/.88 var(--display); text-transform: uppercase; }
@@ -180,7 +180,7 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .dossier-title h1 { margin: 24px 0; font: 400 clamp(80px, 11vw, 170px)/.74 var(--display); letter-spacing: -.04em; text-transform: uppercase; }
 .dossier-title p { max-width: 610px; font: italic clamp(20px, 2.3vw, 29px)/1.4 var(--serif); color: var(--paper-dark); }
 .dossier-portrait { position: relative; padding: 30px; }
-.dossier-portrait .negative { min-height: 520px; transform: rotate(3deg); }
+.dossier-portrait .negative { min-height: 0; aspect-ratio: 4 / 5; transform: rotate(3deg); }
 .tape-c { top: 15px; left: 42%; }
 .dossier-body { display: grid; grid-template-columns: minmax(210px, .65fr) 1.35fr; gap: clamp(40px, 8vw, 130px); padding: 75px max(0px, 5vw); border-top: 1px solid var(--line); }
 .file-stats { align-self: start; position: sticky; top: 20px; }
@@ -238,7 +238,7 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
   .band-hand { right: 8%; bottom: 3%; }
   .member-grid { grid-template-columns: repeat(2, 1fr); }
   .dossier-title h1 { max-width: 8ch; }
-  .dossier-portrait { width: min(650px, 90%); justify-self: end; }
+  .dossier-portrait { width: min(590px, 90%); justify-self: end; }
 }
 
 @media (max-width: 760px) {
@@ -268,8 +268,8 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
   .band-hero { min-height: auto; padding-bottom: 110px; }.band-title-block h1 { font-size: clamp(80px, 23vw, 135px); }.band-hero-negative { width: 94%; min-height: 0; }
   .band-intro { grid-template-columns: 70px 1fr; }.band-intro blockquote { grid-column: 1 / -1; }
   .member-grid, .mini-contact-grid { grid-template-columns: 1fr; }.mini-contact-grid .contact-photo:nth-child(3) { grid-column: auto; width: 100%; }
-  .member-card { min-height: 490px; }
-  .dossier-header { min-height: auto; }.dossier-title h1 { font-size: clamp(75px, 23vw, 125px); }.dossier-portrait { width: 100%; padding-inline: 5px; }.dossier-portrait .negative { min-height: 420px; }
+  .member-card { min-height: 620px; }
+  .dossier-header { min-height: auto; }.dossier-title h1 { font-size: clamp(75px, 23vw, 125px); }.dossier-portrait { width: min(520px, 100%); padding-inline: 5px; }.dossier-portrait .negative { min-height: 0; }
   .dossier-body { grid-template-columns: 1fr; }.file-stats { position: static; }.profile-copy blockquote { padding-left: 10px; }
   .dispatch-hero h1 { font-size: clamp(87px, 29vw, 150px); }.dispatch-layout { grid-template-columns: 1fr; }.dispatch-image .negative { min-height: 420px; }
   .contact-sheet { display: block; }.contact-sheet .contact-photo { width: 94%; margin: 0 auto 70px !important; }
