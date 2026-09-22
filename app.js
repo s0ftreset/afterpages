@@ -56,9 +56,19 @@
     </div>`;
   }
 
+  function dispatchPhoto(item, index = 0, className = '') {
+    if (!item.image) return negative(`${item.title} / after hours`, index, className);
+    return `<div class="negative negative-${(index % 6) + 1} has-photo ${className}">
+      <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.imageAlt || item.title)}" loading="eager" style="object-position:${escapeHTML(item.imagePosition || '50% 35%')}">
+      <span class="negative-code">FG / SIDE DESK / ${String(index + 1).padStart(2, '0')}</span>
+      <span class="negative-label">${escapeHTML(item.title)} / IRIS MARLOWE</span>
+      <span class="negative-state">FIELD PORTRAIT</span>
+    </div>`;
+  }
+
   function contactPhoto(item, index) {
     const media = item.image
-      ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)} — ${escapeHTML(item.place)}, ${escapeHTML(item.year)}" loading="lazy">`
+      ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.imageAlt || `${item.title} — ${item.place}, ${item.year}`)}" loading="lazy">`
       : negative(`${item.place}, ${item.year}`, index, 'contact-negative');
     return `<figure class="contact-photo tilt-${(index % 5) + 1}">
       ${media}
@@ -183,7 +193,7 @@
       <a class="back-link" href="#/">← RETURN TO THE FRONT PAGE</a>
       <header class="dispatch-hero"><span class="label">${escapeHTML(item.label)} / FOXGLOVE SIDE DESK</span><h1>${escapeHTML(item.title)}</h1><p>${escapeHTML(item.subtitle)}</p></header>
       <div class="dispatch-layout">
-        <div class="dispatch-image">${negative(`${item.title} / after hours`, data.dispatches.indexOf(item) + 3)}<span class="tape tape-d" aria-hidden="true"></span></div>
+        <div class="dispatch-image">${dispatchPhoto(item, data.dispatches.indexOf(item) + 3)}<span class="tape tape-d" aria-hidden="true"></span></div>
         <div class="dispatch-copy"><blockquote>${escapeHTML(item.pull)}</blockquote><p>${escapeHTML(item.copy)}</p><div class="dispatch-notes">${item.notes.map(note => `<span>${escapeHTML(note)}</span>`).join('')}</div><p class="hand-note">not everything important happens on a stage.</p></div>
       </div>
       ${related ? `<section class="single-contact"><span class="label">FROM THE UNPUBLISHED ROLL</span>${contactPhoto(related, data.archive.indexOf(related))}</section>` : ''}

@@ -161,6 +161,9 @@ window.FOXGLOVE = {
       id: "dead-air",
       label: "LATE-NIGHT TRANSMISSION",
       title: "Dead Air",
+      image: "assets/photos/miles-stream-room.webp",
+      imageAlt: "Miles Reyes sitting at his late-night streaming desk surrounded by tattoo art, books, candles, and recording equipment",
+      imagePosition: "50% 36%",
       subtitle: "The red light is on. Miles Reyes is pretending this is normal.",
       copy: "Streams after closing, chat moving too fast, ink still on his hands. DeadAirMiles is the online half of a life built between a tattoo machine and a camera—warmer, funnier, and far less anonymous than the handle suggests.",
       pull: "He calls it dead air. Thousands of people keep showing up to listen.",
@@ -218,10 +221,11 @@ window.FOXGLOVE = {
       note: "niamh says it was supposed to do that. it was not."
     },
     {
-      id: "fg-006", image: "", band: "Dead Air", place: "Good Company", year: "2026",
-      title: "After closing",
-      caption: "The stream ended forty minutes ago. The red light is still on. Miles forgot the camera again.",
-      note: "rory noticed. rory did not tell him."
+      id: "fg-006", image: "assets/photos/miles-horror-stream.webp", band: "Dead Air", place: "Good Company", year: "2026",
+      imageAlt: "Screenshot of Miles Reyes calmly streaming a haunted-house horror game while the chat panics",
+      title: "Not even flinching",
+      caption: "Chat is losing its mind. Miles is walking toward the haunted hallway on purpose.",
+      note: "screenshot from a horror stream. how is this man never scared?"
     }
   ]
 };
