@@ -552,19 +552,25 @@ window.FOXGLOVE = {
       note: "elijah arrived with coffee and stayed for a decade."
     },
     {
-      id: "fg-003", image: "", band: "NSH × GT", place: "Milwaukee", year: "2018",
+      id: "fg-003", image: "assets/photos/nsh-glass-teeth-same-hallway.webp",
+      imageAlt: "Members of No Saints Here and Glass Teeth crowded together in a narrow, battered backstage hallway",
+      band: "NSH × GT", place: "Milwaukee", year: "2018",
       title: "Same terrible hallway",
       caption: "Two bands, one broken green-room lock, and a rivalry nobody had started marketing yet.",
       note: "look at the jacket behind niamh. then mind your business."
     },
     {
-      id: "fg-004", image: "", band: "No Saints Here", place: "Unknown motel", year: "2020",
+      id: "fg-004", image: "assets/photos/nsh-four-in-the-morning.webp",
+      imageAlt: "Dolly perched on a washing machine while Forrest tunes a guitar in an empty fluorescent laundromat late at night",
+      band: "No Saints Here", place: "Unknown motel", year: "2020",
       title: "Four in the morning",
       caption: "Dolly on a washing machine. Forrest tuning under fluorescent light. Nobody remembers who took the room key.",
       note: "negative was stuck to a diner receipt. very professional archive."
     },
     {
-      id: "fg-005", image: "", band: "Glass Teeth", place: "Kelleher's Studio", year: "2024",
+      id: "fg-005", image: "assets/photos/glass-teeth-no-clean-signal.webp",
+      imageAlt: "Glass Teeth in a cluttered late-night studio while Niamh works on a smoking power supply amid tape reels and coffee cups",
+      band: "Glass Teeth", place: "Kelleher's Studio", year: "2024",
       title: "No clean signal",
       caption: "Tape loops, coffee rings, a baritone guitar, and the exact moment the power supply started smoking.",
       note: "niamh says it was supposed to do that. it was not."
