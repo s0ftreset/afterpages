@@ -36,6 +36,16 @@
     </div>`;
   }
 
+  function bandPhoto(band, index = 0, className = '') {
+    if (!band.image) return negative(`${band.name} / live`, index, className);
+    return `<div class="negative negative-${(index % 6) + 1} has-photo ${className}">
+      <img src="${escapeHTML(band.image)}" alt="${escapeHTML(band.imageAlt || band.name)}" loading="lazy">
+      <span class="negative-code">FG / ${String(index + 1).padStart(3, '0')}</span>
+      <span class="negative-label">${escapeHTML(band.name)} / IRIS MARLOWE</span>
+      <span class="negative-state">ARCHIVE PRINT</span>
+    </div>`;
+  }
+
   function contactPhoto(item, index) {
     const media = item.image
       ? `<img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)} — ${escapeHTML(item.place)}, ${escapeHTML(item.year)}" loading="lazy">`
@@ -60,7 +70,7 @@
         <p>${escapeHTML(band.summary)}</p>
         <strong>OPEN THE FILE <span aria-hidden="true">↗</span></strong>
       </div>
-      ${negative(`${band.name} / live`, index + 1, 'band-negative')}
+      ${bandPhoto(band, index + 1, 'band-negative')}
       <span class="scrawl scrawl-${index}">${escapeHTML(band.irisNote)}</span>
     </a>`;
   }
@@ -79,8 +89,8 @@
           <div class="byline"><span>THE FOXGLOVE ARCHIVE</span><span>2015—2026</span></div>
         </div>
         <div class="cover-collage" aria-label="Archival photo placeholders">
-          ${negative('Side-stage / unknown venue', 0, 'cover-photo cover-photo-a')}
-          ${negative('Load-out / 2:13 a.m.', 3, 'cover-photo cover-photo-b')}
+          ${bandPhoto(gt, 0, 'cover-photo cover-photo-a')}
+          ${bandPhoto(nsh, 3, 'cover-photo cover-photo-b')}
           <span class="tape tape-a" aria-hidden="true"></span><span class="tape tape-b" aria-hidden="true"></span>
           <p class="hand-note">the feud photographs<br>better than the truth →</p>
         </div>
@@ -129,7 +139,7 @@
     app.innerHTML = `<article class="band-page">
       <header class="band-hero">
         <div class="band-title-block"><span class="label">${escapeHTML(band.desk)} / ${escapeHTML(band.years)}</span><h1>${escapeHTML(band.name)}</h1><p>${escapeHTML(band.pullQuote)}</p></div>
-        ${negative(`${band.name} / full band`, band.id === 'glass-teeth' ? 4 : 1, 'band-hero-negative')}
+        ${bandPhoto(band, band.id === 'glass-teeth' ? 4 : 1, 'band-hero-negative')}
         <p class="hand-note band-hand">${escapeHTML(band.irisNote)}</p>
       </header>
       <section class="band-intro"><span class="drop-number">${band.members.length}</span><div><span class="label">ON THE RECORD</span><p>${escapeHTML(band.summary)}</p></div><blockquote>${escapeHTML(band.pullQuote)}</blockquote></section>
