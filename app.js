@@ -170,7 +170,42 @@
 
   function spoilerBlock(block) {
     if (block.type === 'quote') return `<blockquote>${escapeHTML(block.text)}</blockquote>`;
+    if (block.type === 'list') return `<ul>${block.items.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>`;
+    if (block.type === 'note') return `<aside>${escapeHTML(block.text)}</aside>`;
     return `<p>${escapeHTML(block.text)}</p>`;
+  }
+
+  function dahliaSecrets(person) {
+    if (!person.secrets) return '';
+    const ownFile = Boolean(person.secrets.selfAuthored);
+    const archiveLabel = ownFile ? "DOLLY'S SPACE // PERSONAL FILE" : "NO SAINTS HERE // DOLLY'S UNAUTHORIZED ARCHIVE";
+    const title = ownFile ? "DOLLY'S SPACE" : "DAHLIA'S SECRETS";
+    const triggerName = ownFile ? 'DOLLY' : person.name.toUpperCase();
+    const warning = ownFile
+      ? "Fine. But since I’m the one who built this fucking section, I reserve the right to object to the framing."
+      : "Spoilers below. Dahlia Gutierrez has admin access and no meaningful supervision.";
+    return `<section class="spoiler-vault dahlia-vault" aria-label="Dahlia's secrets and spoilers for ${escapeHTML(person.name)}">
+      <details class="secret-gate">
+        <summary>
+          <span>${escapeHTML(archiveLabel)}</span>
+          <strong>${escapeHTML(title)} <i aria-hidden="true">♥</i></strong>
+          ${ownFile ? `<em>YOU CAME LOOKING FOR DIRT ON ME? RUDE.</em>` : ''}
+          <b>CLICK HERE FOR ${escapeHTML(triggerName)}'S SECRETS / SPOILERS</b>
+          <small>DO NOT SHOW MARA // DEFINITELY DO NOT SHOW THE BAND</small>
+        </summary>
+        <div class="secret-contents">
+          <header><span>⚠ SPOILERS / EXTREMELY PRIVATE / PROBABLY TRUE</span><p>${escapeHTML(warning)}</p><strong>— Dolly</strong></header>
+          <div class="secret-stack">${person.secrets.files.map(file => `<details class="secret-file">
+            <summary><span>+ ${escapeHTML(file.label)}</span><strong>${escapeHTML(file.title)}</strong></summary>
+            <div class="secret-copy">
+              ${file.warning ? `<p class="dolly-warning">${escapeHTML(file.warning)}</p>` : ''}
+              ${file.blocks.map(spoilerBlock).join('')}
+            </div>
+          </details>`).join('')}</div>
+          <footer>LEAKED BY DAHLIA “DOLLY” GUTIERREZ // ALLEGEDLY</footer>
+        </div>
+      </details>
+    </section>`;
   }
 
   function fractureFiles(person) {
@@ -212,6 +247,7 @@
         <aside class="file-stats"><span class="red-stamp">ON FILE</span><dl><dt>AGE</dt><dd>${escapeHTML(person.age)}</dd><dt>BAND</dt><dd>${escapeHTML(band.name)}</dd><dt>ROLE</dt><dd>${escapeHTML(person.role)}</dd><dt>FILE MARKER</dt><dd>${escapeHTML(person.marker)}</dd></dl></aside>
         <section class="profile-copy"><span class="label">IRIS MARLOWE / FIELD NOTES</span><p class="lead">${escapeHTML(person.deck)}</p><p>${escapeHTML(person.bio)}</p><div class="fact-strips">${person.facts.map(fact => `<span>${escapeHTML(fact)}</span>`).join('')}</div><blockquote>“${escapeHTML(person.iris)}”<small>— handwritten in the contact-sheet envelope</small></blockquote></section>
       </div>
+      ${dahliaSecrets(person)}
       ${fractureFiles(person)}
       <nav class="peer-files" aria-label="More band member files"><span>OTHER ${escapeHTML(band.short)} FILES</span>${peers.map(peer => `<a href="#/person/${peer.id}">${escapeHTML(peer.name)} ↗</a>`).join('')}</nav>
     </article>`;

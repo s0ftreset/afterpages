@@ -36,7 +36,45 @@ window.FOXGLOVE = {
           deck: "The unmistakable face and voice of No Saints Here—feral under stage lights, nearly impossible to read once they go dark.",
           bio: "Astrid writes from real arguments, real betrayals, and private moments she will never explain for an audience. Silver-white hair, smoky eyes, heavy ink, and a voice built to turn confession into confrontation made her famous. Fame only made her more guarded.",
           facts: ["Primary lyricist", "Punk-goth uniform", "Weaponized eye contact", "Hates manufactured celebrity"],
-          iris: "She looked directly into my lens once and I nearly apologized for something."
+          iris: "She looked directly into my lens once and I nearly apologized for something.",
+          secrets: {
+            files: [
+              {
+                label: "FAMILY FILE",
+                title: "Ruth Vale Erasure",
+                blocks: [
+                  { type: "p", text: "Astrid will tell you she basically raised herself. This is Ruth Vale erasure, and I won’t stand for it." },
+                  { type: "p", text: "Astrid grew up bouncing between her mother Celeste’s unstable apartments and her grandmother Ruth’s house. Celeste loved her. She also wasn’t reliable, and Astrid learned way too young how to stretch groceries, handle bills, and recognize when an adult saying ‘I’ll be back tonight’ didn’t necessarily mean tonight." },
+                  { type: "p", text: "Ruth was the constant. Same house. Same phone number. Same floral couch that I personally believe predates electricity." },
+                  { type: "list", items: ["Ruth calls Forrest ‘the quiet one.’", "Jett is ‘the blond menace.’", "I am ‘that lovely drummer,’ because Ruth has taste.", "Roman is just Roman, because he fixed her sink once and somehow became her favorite grandchild despite a devastating lack of biological relation.", "Astrid secretly pays one of Celeste’s bills and would commit murder before admitting it.", "She has two younger half-siblings through her father whom she barely knows.", "Her half-sister Emma was already an NSH fan before discovering Astrid was her sister."] },
+                  { type: "note", text: "DOLLY’S NOTE: Astrid doesn’t need people. Just ask her. She’ll tell you. Repeatedly. Don’t investigate why she remembers every single time somebody promised they’d show up." }
+                ]
+              },
+              {
+                label: "EXES & BAD DECISIONS",
+                title: "Concerning Electrical Wiring",
+                blocks: [
+                  { type: "p", text: "Astrid’s romantic history is less train wreck and more beautiful old building with deeply concerning electrical wiring." },
+                  { type: "p", text: "She doesn’t fall easily. When she does, she has historically responded to the horrifying realization that another human being matters to her by becoming approximately twelve percent harder to emotionally access." },
+                  { type: "p", text: "Her big pre-fame relationship survived basement shows, terrible apartments, and the years when NSH’s touring budget consisted primarily of loose change and spite. It ended because of exactly that instinct to leave first." },
+                  { type: "quote", text: "I can’t keep proving I’m not leaving when you keep leaving first." },
+                  { type: "p", text: "Astrid pretended that didn’t absolutely gut her. We all pretended to believe her." },
+                  { type: "list", items: ["Briefly dated a bartender because I’m reasonably certain she liked the bar more than him.", "Slept with a musician from a band NSH openly hated.", "Realized halfway through a date that she’d previously hooked up with the person’s roommate.", "Blocked an ex and continued wearing their jacket for approximately three years. No, I will not identify the jacket. Yes, there are photographs."] }
+                ]
+              },
+              {
+                label: "A STORY DOLLY SWEARS IS TRUE",
+                title: "The Great Astrid Arrest That Wasn’t",
+                blocks: [
+                  { type: "p", text: "Early NSH. Basement show. Somebody called the cops. Astrid, approximately twenty and several drinks beyond sound judgment, became completely convinced she was about to be arrested." },
+                  { type: "p", text: "She solemnly handed me her rings, her cigarettes, and twenty-three dollars. Then she looked directly into my eyes." },
+                  { type: "quote", text: "Tell Ruth I wasn’t driving." },
+                  { type: "p", text: "The cop gave us a warning. Nobody was arrested. Astrid immediately requested her cigarettes back. I returned the rings. I kept the twenty-three dollars." },
+                  { type: "note", text: "She claims I’ve embellished this story. I still have the money." }
+                ]
+              }
+            ]
+          }
         },
         {
           id: "forrest-hale",
@@ -50,7 +88,43 @@ window.FOXGLOVE = {
           deck: "A man of six words, four of them sarcastic, until somebody puts a guitar in his hands.",
           bio: "Forrest is quiet, perceptive, and allergic to explaining himself. His guitar work says everything he refuses to. He and Astrid share the kind of live chemistry that keeps rumor columns employed; both insist it is performance and decline to define the rest.",
           facts: ["Knuckle ink: DEAD", "Fixes gear instead of feelings", "Club-days wardrobe survivor", "Coffee appears without comment"],
-          iris: "Photograph the hands. He will pretend not to notice you doing it."
+          iris: "Photograph the hands. He will pretend not to notice you doing it.",
+          secrets: {
+            files: [
+              {
+                label: "FAMILY FILE",
+                title: "The Quiet One and His Little Sister",
+                blocks: [
+                  { type: "p", text: "Forrest has a younger sister named Lila. This explains more about Forrest than Forrest has willingly explained about himself in his entire life. He answers Lila’s calls every single time—noon or three in the morning." },
+                  { type: "p", text: "Their father was volatile and unpredictable, especially when drinking. Forrest learned to read the night from footsteps, keys in the door, and how hard a cabinet closed. A lot of that vigilance wasn’t for himself. It was for Lila. He’d give her headphones, let her sleep in his room, turn music up when things got bad, and get her out of the house when he could." },
+                  { type: "p", text: "When Forrest was sixteen, his father smashed his first real guitar during an argument. It was cheap, secondhand, and Forrest had saved for it himself. His mother Marianne found him trying to work out whether it could be repaired. It couldn’t. Forrest doesn’t speak to his father anymore. Marianne eventually got them out." },
+                  { type: "quote", text: "Lila is one of approximately six people alive who can say, ‘You’re doing the thing,’ and make Forrest stop pretending he doesn’t know what she means." },
+                  { type: "p", text: "Also, she steals his hoodies. Fame has not protected him from this." },
+                  { type: "note", text: "DOLLY’S NOTE: Forrest fixes everything—cables, pedals, jewelry, furniture, zippers, road cases, and that lamp Astrid should have thrown away six years ago. He’ll say replacing things is expensive. That’s bullshit. Forrest fixes things because somebody should. Don’t tell him I wrote that. Don’t even look at him differently. He’ll know." }
+                ]
+              },
+              {
+                label: "EXES & BAD DECISIONS",
+                title: "Suspiciously Boyfriend-Shaped",
+                blocks: [
+                  { type: "p", text: "Forrest has surprisingly few official exes. He has an alarming number of situationships." },
+                  { type: "p", text: "His problem isn’t dramatic breakups. It’s that Forrest can make somebody feel incredibly close to him while revealing approximately nothing about himself. He’ll remember your coffee order, fix your kitchen drawer, leave his shirt at your apartment, sleep beside you four nights a week, and kiss your forehead when he thinks you’re asleep. Then you realize you have no fucking clue what he’s afraid of." },
+                  { type: "quote", text: "You make people feel close to you without actually letting them know you." },
+                  { type: "list", items: ["Has absolutely hooked up with somebody because they had good tattoos.", "Once abandoned his own hookup halfway through the night to smoke alone on a fire escape.", "Accidentally maintained a six-month situationship because neither participant asked what they were doing.", "Has had multiple people assume they were dating him because Forrest behaves suspiciously boyfriend-shaped without ever discussing it."] }
+                ]
+              },
+              {
+                label: "A STORY DOLLY SWEARS IS TRUE",
+                title: "Forrest Hale vs. the Possum",
+                blocks: [
+                  { type: "p", text: "Cheap motel. Three in the morning. Forrest went outside to smoke. Twenty minutes later he returned carrying a towel. There was a possum inside the towel." },
+                  { type: "quote", text: "I cannot emphasize enough that there was a live fucking possum in our motel room. Roman woke up to me whisper-screaming: ‘FORREST BROUGHT A FUCKING POSSUM INTO THE MOTEL.’" },
+                  { type: "p", text: "Forrest looked genuinely offended. ‘It’s hurt.’ We found wildlife rescue. The possum survived. Forrest denies naming it." },
+                  { type: "note", text: "Its name was Kevin." }
+                ]
+              }
+            ]
+          }
         },
         {
           id: "jett-maddox",
@@ -64,7 +138,52 @@ window.FOXGLOVE = {
           deck: "Flirt, instigator, professional interview derailment, and far more observant than he wants anyone to know.",
           bio: "Jett wears his charm like a switchblade: bright, quick, and usually deployed before anyone notices he is bleeding. Shaggy bleached hair, bruised knuckles, a crooked grin, and no instinct for leaving a reaction unprovoked.",
           facts: ["Regional DIY lifer", "Remembers everything", "Humor as body armor", "Will touch the sign marked DO NOT TOUCH"],
-          iris: "Never tell him a shot is candid. He becomes visibly impossible the second he knows."
+          iris: "Never tell him a shot is candid. He becomes visibly impossible the second he knows.",
+          secrets: {
+            files: [
+              {
+                label: "FAMILY FILE",
+                title: "Devastatingly Normal",
+                blocks: [
+                  { type: "p", text: "I have devastating information about Jett Maddox. Please prepare yourselves. His family is completely fucking normal. We checked. Nothing happened to him. He’s just like this." },
+                  { type: "p", text: "His mother Rebecca teaches high-school English. His father Thomas is a civil engineer. They love him. They supported him. They fed him. They provided structure and enrichment. It didn’t work." },
+                  { type: "list", items: ["Jett calls his parents more often than you would expect.", "His mother responded to a major magazine interview by correcting his grammar.", "His father taught him his first guitar chords and therefore bears partial responsibility for everything that followed.", "His younger sister Chloe calls him Jetson when she wants him angry.", "Chloe possesses enough childhood photographs to end his career.", "She once watched several hundred people lose their minds because Jett took his shirt off and said, ‘I’ve seen him eat shredded cheese over the sink at three in the morning. You people need standards.’", "Rebecca sends Roman a birthday card every year thanking him for dealing with Jett. Roman has kept every card. Jett fucking hates this."] },
+                  { type: "note", text: "DOLLY’S NOTE: Sometimes people ask me what happened to Jett. Again: nothing." }
+                ]
+              },
+              {
+                label: "EXES & BAD DECISIONS",
+                title: "The Niamh Kelleher File",
+                warning: "YOU HAVE BEEN WARNED. THIS ONE IS A FUCKING DISASTER.",
+                blocks: [
+                  { type: "p", text: "I considered leaving this out. Then I remembered Jett has never extended that courtesy to anybody else. Anyway. Jett and Niamh Kelleher of Glass Teeth were together for roughly three years. The embarrassing part is that they were once really fucking good together." },
+                  { type: "p", text: "They met on the regional DIY circuit before either band was famous. Music friends first. Gear nerds. Constant arguing. The kind of friendship where everyone else starts wondering whether these two understand sexual tension isn’t a legitimate debate format. Their first kiss happened during an argument. Obviously." },
+                  { type: "p", text: "Eventually Niamh practically moved into Jett’s apartment without either one formally acknowledging it. Her clothes appeared in his drawers. Her shit migrated into his bathroom. Her favorite food started living in his kitchen. They became disgustingly domestic for two people capable of turning a conversation about distortion pedals into blood sport." },
+                  { type: "p", text: "When they were good, they were really good. They understood each other through music in ways neither offered many people. Jett could make Niamh loosen her death grip on everything for five fucking minutes. Niamh could get Jett to stop performing long enough to admit when something actually hurt. They trusted each other with unusually vulnerable parts of themselves." },
+                  { type: "p", text: "Then both bands got bigger. Success brought comparisons. Comparisons brought resentment. Niamh became ‘Jett Maddox’s girlfriend’ instead of her own fucking name. Schedules became impossible. Important things got missed. Their careers became something everyone expected them to measure against each other." },
+                  { type: "p", text: "Unfortunately, these two have the single worst complementary conflict styles God has ever manufactured. Jett needs resolution immediately. Niamh gets colder, precise, controlled, and untouchable. Jett pushes. Niamh retreats. Jett pushes harder. Niamh gets crueler. Repeat until structural damage occurs." },
+                  { type: "p", text: "The relationship finally detonated after Niamh missed an important No Saints Here show because Glass Teeth had a recording emergency." },
+                  { type: "quote", text: "Jett: ‘You don’t know how to love anything you can’t control.’ Niamh: ‘And you don’t know how to love anything that doesn’t need saving.’" },
+                  { type: "quote", text: "Jett: ‘At least people know how to stay when they’re with me.’" },
+                  { type: "p", text: "Niamh told him to get out. Neither said we’re done. Jett left. Niamh didn’t call. Jett didn’t go back. Three years of living in each other’s pockets ended because two of the most stubborn people alive apparently decided having an actual breakup conversation would constitute surrender." },
+                  { type: "p", text: "Years later, they genuinely dislike each other. They’re not secretly pining. They’re not waiting for an apology. They’re not soulmates who missed their chance. Sometimes two people can have been incredibly important to each other and still become people who should absolutely never fucking date again." },
+                  { type: "p", text: "Unfortunately, on extremely rare occasions since the breakup, they have made out. While hating each other. It did not fix anything. They regretted it. Probably. Only a very small number of people know this. I am one of them. And now so are you." },
+                  { type: "note", text: "DOLLY’S OFFICIAL ASSESSMENT: They’re not secretly in love. Which somehow makes the occasional hate-making-out significantly more embarrassing." },
+                  { type: "p", text: "OTHER JETT MADDOX ROMANTIC CRIMES: Yes. ARE WE LISTING THEM ALL? No. I have a website bandwidth limit. HAS HE EVER BEEN NORMAL ABOUT A WOMAN? Next question." }
+                ]
+              },
+              {
+                label: "A STORY DOLLY SWEARS IS TRUE",
+                title: "The Cheese Incident",
+                blocks: [
+                  { type: "p", text: "Hotel. 3:14 AM. I walked into the kitchenette. Jett was standing shirtless in front of the open refrigerator eating shredded cheese directly from the bag. No plate. No dignity. Nothing." },
+                  { type: "p", text: "He saw me. I saw him. Jett slowly extended the bag." },
+                  { type: "quote", text: "Cheese?" },
+                  { type: "p", text: "I took some. Neither of us spoke about it again. Years later Chloe independently informed me that Jett has done this since adolescence. I cannot explain this behavior." }
+                ]
+              }
+            ]
+          }
         },
         {
           id: "roman-cross",
@@ -78,7 +197,43 @@ window.FOXGLOVE = {
           deck: "The person you call when the van dies, the promoter lies, or somebody needs to reconsider their choices.",
           bio: "Roman is blunt, practical, and built around a protective streak wide enough to shelter an entire touring party. In the broke years he handled landlords, vans, hospital runs, contracts, and consequences. He still shows love through food, rides, repairs, and a very quiet who did this.",
           facts: ["Mexican-American", "English / Spanish", "Unofficial crisis department", "Keeps the old mementos"],
-          iris: "He always knows where the exits are. He also always knows who has eaten."
+          iris: "He always knows where the exits are. He also always knows who has eaten.",
+          secrets: {
+            files: [
+              {
+                label: "FAMILY FILE",
+                title: "Of Course He’s the Eldest",
+                blocks: [
+                  { type: "p", text: "Roman is the eldest sibling. Of course he fucking is. Elaine and Michael Cross somehow produced three functional adults." },
+                  { type: "p", text: "His younger sister Natalie is an attorney and one of the only human beings capable of arguing him into submission. His younger brother Ben works in graphic design and thinks NSH is hilarious because he doesn’t have to tour with us." },
+                  { type: "quote", text: "Michael communicates through Dad Transmission: ‘Storm coming your way. Watch the roads.’ ‘Saw the Chicago show online. Bass sounded good.’ That second message contains approximately seventeen emotions." },
+                  { type: "p", text: "Elaine can identify which NSH member is having a crisis within thirty seconds of us entering her house. The Cross house became one of our unofficial safe houses before anybody consciously decided it was. There’s always food. Nobody gives a shit about chart positions. Michael asks whether the bus is running. Elaine asks whether you’ve eaten. Natalie insults Roman. Ben shows Jett something stupid on his phone." },
+                  { type: "p", text: "The weirdest part? Roman genuinely doesn’t understand why everybody likes being there so much. To him, it’s just home." },
+                  { type: "note", text: "DOLLY’S NOTE: The rest of us have considered stealing it." }
+                ]
+              },
+              {
+                label: "EXES & BAD DECISIONS",
+                title: "Fewer Does Not Mean None",
+                blocks: [
+                  { type: "p", text: "Roman’s romantic problem is predictable. He’s fantastic at taking care of somebody. He’s fucking terrible at letting them take care of him." },
+                  { type: "p", text: "He had one serious relationship that lasted several years and ended without cheating, screaming, property damage, or anyone climbing out a bathroom window. Jett found this suspicious. The actual problem was quieter. Roman would explain every practical problem while hiding every emotional one." },
+                  { type: "quote", text: "He’d say, ‘Work’s been busy,’ when he meant, ‘I’m drowning.’" },
+                  { type: "p", text: "They loved each other. It still wasn’t enough." },
+                  { type: "list", items: ["Roman’s taste becomes inexplicably worse after two drinks.", "He has had precisely one ill-advised backstage hookup and will take the details to his grave.", "He dated someone for three months before we realized because he forgot to mention it.", "I maintain Roman has a weakness for people who are a little bit mean to him. Roman rejects this allegation. The evidence does not."] }
+                ]
+              },
+              {
+                label: "A STORY DOLLY SWEARS IS TRUE",
+                title: "Roman Cross Got Drunk Once",
+                blocks: [
+                  { type: "p", text: "Not tipsy. Drunk. Early-tour celebration. Roman disappeared. We found him outside the venue sitting on a curb beside a parking meter." },
+                  { type: "quote", text: "He was explaining to it, with extraordinary seriousness: ‘You can’t just take people’s money and give them nothing.’" },
+                  { type: "p", text: "Jett has video. Roman knows Jett has video. This is the closest No Saints Here has ever come to mutually assured destruction." }
+                ]
+              }
+            ]
+          }
         },
         {
           id: "dahlia-gutierrez",
@@ -92,7 +247,45 @@ window.FOXGLOVE = {
           deck: "A technically vicious drummer and the emotional center of five people pretending they do not need one.",
           bio: "Dolly hits hard, loves loudly, steals food, invades bunks, and notices every emotional temperature change in the room. Raised in a loud Puerto Rican-American New York family, she moves easily between English, Spanish, and Spanglish—and guards other people's secrets better than her own face can guard hers.",
           facts: ["Puerto Rican-American", "Patchwork tattoos", "Atrocious liar", "Other people's hoodies"],
-          iris: "Half my best contact sheets exist because Dolly forgot the camera was there."
+          iris: "Half my best contact sheets exist because Dolly forgot the camera was there.",
+          secrets: {
+            selfAuthored: true,
+            files: [
+              {
+                label: "FAMILY FILE",
+                title: "The Gutierrez Industrial Family Complex",
+                blocks: [
+                  { type: "p", text: "Mom: Marisol. Dad: Rafael. Mateo. Sofia. Nico. Nieces. Nephews. Cousins. Aunts. Uncles. People whose exact relationship to me nobody has successfully explained since 2008." },
+                  { type: "p", text: "My dad built my first drum kit out of whatever we could afford—buckets, a secondhand snare, salvaged stands. He complained about the noise constantly. Then he soundproofed part of the garage for me. That’s Rafael." },
+                  { type: "p", text: "My mom spent years telling me music wasn’t a reliable career because she wanted me to have health insurance. She never once told me I wasn’t good enough to do it. Now she goes to shows wearing industrial-strength earplugs and tells strangers, ‘That’s my daughter.’ They did not ask. She does not care." },
+                  { type: "p", text: "Eventually my family absorbed the rest of NSH. Astrid was immediate. Forrest required feeding from a respectful distance like a suspicious woodland animal. Jett got interrogated by approximately six uncles." },
+                  { type: "p", text: "Roman made one critical mistake. He helped Dad carry folding tables. Once. This was years ago. He has been assigned setup duties at every Gutierrez gathering since. There is no appeals process." }
+                ]
+              },
+              {
+                label: "EXES & BAD DECISIONS",
+                title: "Why Does Everybody Else Get a Narrator?",
+                blocks: [
+                  { type: "p", text: "Excuse me. Why does everybody else get a narrator and I get a fucking deposition? Fine. I’ve dated. I’ve hooked up. I’ve made excellent choices. I’ve made choices Astrid responded to with: ‘Absolutely fucking not.’" },
+                  { type: "p", text: "I’ve dated men. I’ve dated women. I’ve dated somebody from a rival band. I’ve slept with a bartender and received suspiciously generous pours for approximately six months afterward. There is one vacation romance who still sends me birthday messages." },
+                  { type: "p", text: "I once hooked up with somebody because they complimented my thighs correctly. Correctly is important." },
+                  { type: "p", text: "And yes, there is one actual Ex. We loved each other. We were also fucking terrible together. Those statements can coexist. Sometimes somebody can matter enormously and still not belong in your life forever. Look at me being emotionally healthy. Disgusting." },
+                  { type: "note", text: "I maintain a ranking system for exes based primarily on whether I’d trust them to feed my hypothetical cat. No, you cannot see it." }
+                ]
+              },
+              {
+                label: "A STORY DOLLY SWEARS IS TRUE",
+                title: "The Drum Stool Incident",
+                blocks: [
+                  { type: "p", text: "Apparently I am not allowed to submit my own evidence, so the band was consulted. This was a mistake." },
+                  { type: "p", text: "Early NSH show. Tiny venue. My drum stool broke mid-song. I finished the fucking song anyway. Afterward, I carried the stool outside and threw it into a dumpster. The dumpster rolled downhill. That is the entire story." },
+                  { type: "quote", text: "Roman: ‘It moved maybe ten feet.’ Astrid: ‘Twenty.’ Forrest: ‘It hit a car.’ Jett: ‘It hit a cop car.’" },
+                  { type: "p", text: "There was NO FUCKING COP CAR." },
+                  { type: "note", text: "JETT: ‘That’s what Big Drum wants you to believe.’" }
+                ]
+              }
+            ]
+          }
         }
       ]
     },

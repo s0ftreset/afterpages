@@ -228,6 +228,42 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .fracture-copy > blockquote { margin: 30px 0; padding: 20px 25px; border-left: 4px solid #9b899d; background: #0c0b0d; font: italic 22px/1.45 var(--serif); color: #e4dce7; }
 .fracture-copy .warning-tape { max-width: none; margin: 0 0 35px; padding: 11px 17px; background: repeating-linear-gradient(-45deg, #e0d2e3 0 14px, #8f8192 14px 28px); color: #0b090c; font: 900 12px/1.4 var(--mono); letter-spacing: .08em; text-align: center; text-transform: uppercase; }
 .vault-contents > footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #514b54; color: #8f8792; font: 700 9px var(--mono); letter-spacing: .1em; text-align: right; }
+.dahlia-vault { transform: rotate(-.2deg); }
+.secret-gate { position: relative; border: 5px solid #bcae94; color: var(--ink); background: #d8c9ad; box-shadow: 13px 17px 0 #08070699; overflow: hidden; }
+.secret-gate::before { content: ''; position: absolute; z-index: 3; top: -7px; left: 42%; width: 130px; height: 32px; background: #b8a479b8; box-shadow: inset 0 0 12px #fff4; transform: rotate(-3deg); pointer-events: none; }
+.secret-gate > summary { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 13px 30px; align-items: end; min-height: 260px; padding: clamp(32px, 5vw, 68px); background: linear-gradient(90deg, transparent 49%, #7a6d5825 50%, transparent 51%), repeating-linear-gradient(0deg, transparent 0 31px, #735f3e18 32px), #d8c9ad; text-transform: uppercase; }
+.secret-gate > summary::after { content: 'OPEN THE DIRT +'; justify-self: end; padding: 10px 13px; border: 2px solid var(--blood); color: var(--blood); font: 900 10px var(--mono); transform: rotate(2deg); }
+.secret-gate[open] > summary::after { content: 'HIDE THE EVIDENCE −'; }
+.secret-gate > summary > span, .secret-gate > summary > small { font: 900 10px/1.4 var(--mono); letter-spacing: .11em; color: #554a3d; }
+.secret-gate > summary > strong { grid-column: 1 / -1; font: 400 clamp(58px, 9vw, 132px)/.76 var(--display); letter-spacing: -.025em; color: #221b18; }
+.secret-gate > summary > strong i { display: inline-block; color: var(--blood); font: normal .44em var(--serif); transform: rotate(13deg); }
+.secret-gate > summary > em { grid-column: 1 / -1; margin-top: -5px; color: var(--blood); font: 700 clamp(16px, 2vw, 24px)/1.2 var(--hand); text-transform: none; transform: rotate(-2deg); }
+.secret-gate > summary > b { font: 900 clamp(12px, 1.5vw, 18px)/1.45 var(--mono); color: var(--blood); }
+.secret-gate[open] > summary { border-bottom: 3px solid #8d7d64; }
+.secret-contents { padding: clamp(25px, 5vw, 70px); background: #cbb995; }
+.secret-contents > header { max-width: 820px; margin: 0 0 55px; padding: 24px 27px; border: 3px double var(--blood); background: #dfd2b9; transform: rotate(.5deg); }
+.secret-contents > header span { color: var(--blood); font: 900 11px var(--mono); letter-spacing: .1em; }
+.secret-contents > header p { margin: 15px 0 9px; font: 22px/1.45 var(--hand); color: #281d19; }
+.secret-contents > header strong { display: block; color: var(--blood); font: 700 15px var(--hand); text-align: right; transform: rotate(-3deg); }
+.secret-stack { display: grid; gap: 17px; }
+.secret-file { border: 2px solid #87785f; background: #e0d5bd; box-shadow: 6px 7px 0 #765f3b40; }
+.secret-file:nth-child(even) { transform: rotate(.25deg); }
+.secret-file > summary { display: grid; grid-template-columns: minmax(210px, .45fr) 1fr auto; gap: 20px; align-items: center; padding: 23px 26px; }
+.secret-file > summary::after { content: 'READ IT ↘'; justify-self: end; color: var(--blood); font: 900 10px var(--mono); }
+.secret-file[open] > summary::after { content: 'CLOSE IT ↖'; }
+.secret-file > summary span { color: var(--blood); font: 900 10px/1.35 var(--mono); letter-spacing: .08em; }
+.secret-file > summary strong { font: 400 clamp(28px, 3.2vw, 47px)/.95 var(--display); color: #241c18; text-transform: uppercase; }
+.secret-file[open] > summary { border-bottom: 2px dashed #8f7f65; background: #e7dcc6; }
+.secret-copy { max-width: 960px; padding: clamp(25px, 4vw, 54px); }
+.secret-copy > p, .secret-copy li { font: 18px/1.67 var(--serif); color: #302720; }
+.secret-copy > p { margin: 0 0 22px; }
+.secret-copy ul { margin: 28px 0; padding-left: 26px; }
+.secret-copy li { margin-bottom: 11px; padding-left: 6px; }
+.secret-copy li::marker { color: var(--blood); }
+.secret-copy > blockquote { margin: 32px 0; padding: 22px 27px; border-left: 6px solid var(--blood); background: #cab997; font: italic 22px/1.48 var(--serif); color: #241b17; }
+.secret-copy > aside { margin: 36px 0 4px; padding: 22px 25px; border: 2px solid var(--blood); color: var(--blood); background: #e7dcc6; font: 700 18px/1.45 var(--hand); transform: rotate(-.6deg); }
+.secret-copy .dolly-warning { max-width: none; margin: 0 0 35px; padding: 12px 18px; color: #f3e8d3; background: repeating-linear-gradient(-45deg, var(--blood) 0 16px, #2a1c1d 16px 32px); font: 900 12px/1.45 var(--mono); letter-spacing: .08em; text-align: center; text-shadow: 0 1px #000; }
+.secret-contents > footer { margin-top: 42px; padding-top: 19px; border-top: 2px solid #8d7d64; color: #5e4f40; font: 900 9px var(--mono); letter-spacing: .1em; text-align: right; }
 .peer-files { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; padding: 25px; border-block: 1px solid var(--line); }
 .peer-files > span { margin-right: auto; font: 700 10px var(--mono); color: var(--rust); }
 .peer-files a { padding: 10px; border: 1px solid var(--line); font: 10px var(--mono); text-decoration: none; text-transform: uppercase; }
@@ -305,6 +341,7 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
   .dossier-header { min-height: auto; }.dossier-title h1 { font-size: clamp(75px, 23vw, 125px); }.dossier-portrait { width: min(520px, 100%); padding-inline: 5px; }.dossier-portrait .negative { min-height: 0; }
   .dossier-body { grid-template-columns: 1fr; }.file-stats { position: static; }.profile-copy blockquote { padding-left: 10px; }
   .vault-gate > summary { grid-template-columns: 1fr; min-height: 220px; }.vault-gate > summary::after { justify-self: start; }.fracture-file > summary { grid-template-columns: 1fr; gap: 8px; }.fracture-file > summary::after { justify-self: start; }
+  .secret-gate > summary { grid-template-columns: 1fr; min-height: 225px; }.secret-gate > summary::after { justify-self: start; }.secret-file > summary { grid-template-columns: 1fr; gap: 8px; }.secret-file > summary::after { justify-self: start; }
   .dispatch-hero h1 { font-size: clamp(87px, 29vw, 150px); }.dispatch-layout { grid-template-columns: 1fr; }.dispatch-image .negative { min-height: 420px; }
   .contact-sheet { display: block; }.contact-sheet .contact-photo { width: 94%; margin: 0 auto 70px !important; }
   .secret-archive h1 { font-size: clamp(60px, 19vw, 105px); }
