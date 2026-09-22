@@ -117,7 +117,41 @@ window.FOXGLOVE = {
           deck: "A smoky voice, a private nature, and the deeply inconvenient habit of meaning exactly what he says.",
           bio: "Noah writes about grief, dependency, shame, desire, and abandonment without turning any of it into spectacle. Onstage he is intimate enough to make a warehouse feel small. Offstage he is gentle, sincere, and much harder to move than that gentleness suggests.",
           facts: ["Low tenor / high baritone", "Primary lyricist", "Hates invasive fame", "Firm moral spine"],
-          iris: "The camera likes him. He does not especially like the camera back."
+          iris: "The camera likes him. He does not especially like the camera back.",
+          spoilers: {
+            code: "GT-NB // FILE 01",
+            files: [
+              {
+                label: "ORIGIN FILE",
+                title: "The Kitchen Light Was Never About a Lover",
+                blocks: [
+                  { type: "p", text: "Fans spent years assuming Window Seat, Emergency Contact, and half of Housefire Etiquette were breakup songs. They weren’t." },
+                  { type: "p", text: "Noah and Axel grew up with parents struggling with addiction, cycling between promises, brief sobriety, disappearance, and relapse. Noah learned very young to become the easiest child in the room. He cooked. Waited. Explained things away." },
+                  { type: "p", text: "At thirteen, he really did sit by a window waiting for a parent who had promised they’d come home. That became Window Seat. Noah has never publicly confirmed it. Axel knows exactly what the song means, which is why they almost never play it." },
+                  { type: "quote", text: "Some fans think Noah touches his necklace before performing it because the song is romantic. It isn’t." }
+                ]
+              },
+              {
+                label: "DAMAGE REPORT",
+                title: "The Relationships Nobody Got an Album About",
+                blocks: [
+                  { type: "p", text: "Noah has had actual relationships, including one serious enough to matter deeply, but contrary to fan mythology, not every Glass Teeth song documents the corpse of Noah Bellamy’s love life." },
+                  { type: "p", text: "His worst romantic habit isn’t dramatic betrayal. It’s staying too long. Explaining too much. Convincing himself that because he understands why somebody hurts him, he shouldn’t be angry about being hurt." },
+                  { type: "quote", text: "You forgive people before they apologize." },
+                  { type: "p", text: "That stuck. It’s part of why current Noah is much better at saying no—and why his next relationship is going to get a significantly less self-sacrificing version of him." }
+                ]
+              },
+              {
+                label: "INCIDENT LOG",
+                title: "The Poisonous Animal Problem",
+                blocks: [
+                  { type: "p", text: "Years ago, Glass Teeth were stopped somewhere on tour when Noah found an injured animal near the venue. Nobody agrees anymore whether it was a snake, weird insect, enormous spider, or some other locally horrifying creature." },
+                  { type: "quote", text: "Noah: “I think it’s scared.” Axel: “So am I. Move.”" },
+                  { type: "p", text: "This is the origin of the band’s unanimous answer whenever they’re asked who would die first in the wilderness: Noah. Not because he’s helpless. Because he would absolutely attempt diplomacy with wildlife." }
+                ]
+              }
+            ]
+          }
         },
         {
           id: "axel-bellamy",
@@ -128,7 +162,41 @@ window.FOXGLOVE = {
           deck: "Hyper-competent, profoundly unsentimental about appearances, and always listening for the thing about to fail.",
           bio: "Axel builds the band's physical framework through drums, electronic percussion, live sequencing, and absolute refusal to let a weak system remain weak. His anger gets colder instead of louder. His care arrives as preparation.",
           facts: ["Noah's older brother", "Scarred working hands", "Live sequencing", "Will fix it before asking who broke it"],
-          iris: "I have fourteen photos of him repairing things and one of him willingly posing."
+          iris: "I have fourteen photos of him repairing things and one of him willingly posing.",
+          spoilers: {
+            code: "GT-AB // FILE 02",
+            files: [
+              {
+                label: "ORIGIN FILE",
+                title: "The Kid Who Said ‘We’re Fine’",
+                blocks: [
+                  { type: "p", text: "Axel grew up faster than Noah. Food. Bills. Emergency money. Knowing which neighbors were safe. Knowing when neither parent should be allowed behind a wheel. Knowing exactly how much truth he could tell an adult without risking being separated from his brother." },
+                  { type: "quote", text: "His most practiced childhood lie was: ‘We’re fine.’" },
+                  { type: "p", text: "Adult Axel is considerably angrier about their childhood than he was while living through it, because adulthood gave him enough distance to realize: I was fourteen." },
+                  { type: "p", text: "A lot of his obsessive preparedness still comes from that kid—the batteries, the money, the stocked cupboards, the locks checked twice, and the belief that if he anticipates enough possible disasters, nobody else will have to." }
+                ]
+              },
+              {
+                label: "DAMAGE REPORT",
+                title: "Axel Bellamy Has, In Fact, Dated People",
+                blocks: [
+                  { type: "p", text: "A shocking revelation to approximately half the fandom. Axel is bisexual and has had serious relationships with both men and women." },
+                  { type: "p", text: "His problem has never been an inability to love somebody. It’s that he quietly begins taking responsibility for their entire life. If they have a problem, he fixes it. If they’re upset, he anticipates it. If something goes wrong, he assumes he should have prevented it." },
+                  { type: "quote", text: "One ex: ‘I don’t need you to keep me alive.’ Axel: ‘I know.’ He did not, at the time, actually know." },
+                  { type: "p", text: "He’s working on it. His biggest weakness remains competent people telling him, ‘I’ve got it.’ Fatal. Absolutely fatal." }
+                ]
+              },
+              {
+                label: "INCIDENT LOG",
+                title: "Happy Birthday Asshole",
+                blocks: [
+                  { type: "p", text: "A bakery once misheard an order for HAPPY BIRTHDAY AXEL and delivered a cake reading HAPPY BIRTHDAY ASSHOLE." },
+                  { type: "p", text: "Axel laughed hard enough that he had to sit down. It has now been years. Every single Axel Bellamy birthday cake still says HAPPY BIRTHDAY ASSHOLE." },
+                  { type: "quote", text: "Fans do not know. The band intends to die with this information." }
+                ]
+              }
+            ]
+          }
         },
         {
           id: "niamh-kelleher",
@@ -139,7 +207,45 @@ window.FOXGLOVE = {
           deck: "Cork-born, Chicago-forged, musically obsessive, and capable of making a broken machine sound accusatory.",
           bio: "Niamh is the band's sharp edge: dark auburn hair with one bleached panel, moss-green eyes, dense traditional tattoos, silver piercings, and a studio vocabulary built from alternate tunings, prepared guitar, feedback, field recordings, synths, and damaged tape.",
           facts: ["From Cork, Ireland", "Producer / gear menace", "Accent thickens under stress", "Severe cable problem"],
-          iris: "She knows when I crop around somebody. She never asks who."
+          iris: "She knows when I crop around somebody. She never asks who.",
+          spoilers: {
+            code: "GT-NK // FILE 03",
+            files: [
+              {
+                label: "ORIGIN FILE",
+                title: "Nobody Asked Where She Wanted to Stay",
+                blocks: [
+                  { type: "p", text: "Niamh was sixteen when her parents’ marriage collapsed. Her American mother decided to return to Chicago. Her father remained in Cork. Her older brother Finn, already nineteen, stayed too. Niamh went to America." },
+                  { type: "p", text: "What she remembers most isn’t the divorce. It’s that everyone seemed to make a decision about where they belonged except her. She spent years furious with her mother for taking her away, hurt by Finn for staying, and unable to admit how badly she’d wanted someone to simply ask: Where do you want to be?" },
+                  { type: "quote", text: "Finn: ‘I thought if I asked you to stay, you’d stay for me.’ Niamh: ‘I would’ve.’ That’s why he didn’t ask." },
+                  { type: "p", text: "That is why adult Niamh gets particularly vicious when she feels like someone is making decisions for her." }
+                ]
+              },
+              {
+                label: "DAMAGE REPORT",
+                title: "The Jett Maddox File",
+                warning: "YOU HAVE BEEN WARNED. THIS ONE IS A FUCKING DISASTER.",
+                blocks: [
+                  { type: "p", text: "Niamh and Jett were together for roughly three years. And unfortunately? They were once really good together. Music friends first. Gear nerds. Constant arguing. First kiss during an argument. Eventually domestic enough that Niamh’s belongings simply colonized Jett’s apartment." },
+                  { type: "p", text: "Then fame started pulling everything tight: career comparisons, missed shows, people reducing Niamh to ‘Jett Maddox’s girlfriend,’ Jett needing immediate emotional resolution, and Niamh responding to vulnerability by becoming colder and more controlled." },
+                  { type: "quote", text: "Jett: ‘You don’t know how to love anything you can’t control.’ Niamh: ‘And you don’t know how to love anything that doesn’t need saving.’" },
+                  { type: "quote", text: "Jett: ‘At least people know how to stay when they’re with me.’" },
+                  { type: "p", text: "Niamh told him to get out. Neither technically said we’re done. They just never came back." },
+                  { type: "p", text: "Years later, they genuinely hate each other. On extremely rare occasions, this has still somehow resulted in them making out. Nobody outside a very small circle knows that. They’re not secretly in love—which honestly makes it more embarrassing." }
+                ]
+              },
+              {
+                label: "INCIDENT LOG",
+                title: "The Bathtub Photograph",
+                blocks: [
+                  { type: "p", text: "Early Glass Teeth tour. No money. Four exhausted musicians sleeping in the apartment of someone they barely knew. Noah folded into a chair. Axel on the floor. Elijah under a child’s dinosaur blanket." },
+                  { type: "p", text: "Niamh? Asleep in the bathtub. Fully clothed. Leather jacket used as a pillow." },
+                  { type: "quote", text: "Niamh claims: ‘It was the quietest room.’" },
+                  { type: "p", text: "Someone took a photograph. It still exists. Every member of Glass Teeth possesses a copy. Nobody will release it because everyone looks equally horrible. Mutually assured destruction." }
+                ]
+              }
+            ]
+          }
         },
         {
           id: "elijah-dizon",
@@ -150,7 +256,41 @@ window.FOXGLOVE = {
           deck: "Warm, perceptive, spectacularly funny, and one bad decision away from making disrespect a physical problem.",
           bio: "Elijah gives Glass Teeth its distorted melodic weight. A Filipino-American Chicago native with a big presence and bigger protective instincts, he reads a room fast, loves his people loudly, and is learning that being right does not make every escalation useful.",
           facts: ["Filipino-American", "Chicago native", "Melodic distorted bass", "Food is care"],
-          iris: "He is the easiest person to photograph laughing and the hardest to photograph pretending not to care."
+          iris: "He is the easiest person to photograph laughing and the hardest to photograph pretending not to care.",
+          spoilers: {
+            code: "GT-ED // FILE 04",
+            files: [
+              {
+                label: "ORIGIN FILE",
+                title: "‘I Know. We Were Still Scared.’",
+                blocks: [
+                  { type: "p", text: "Elijah grew up in a loving Chicago family. That’s important. His father, Ren, showed up, worked, fixed things, and loved his children. He also had a terrible temper. He yelled. Slammed cabinets. Sometimes hit walls or threw things. Never Elijah. Never his sisters. But everyone knew when Ren was angry because the entire room changed around him." },
+                  { type: "p", text: "Years later, after Elijah developed a temper of his own, he confronted his father." },
+                  { type: "quote", text: "Ren: ‘I never hit you.’ Elijah: ‘I know. We were still scared.’" },
+                  { type: "p", text: "It changed both of them. Ren eventually began confronting his own behavior. Elijah did too. That’s why present-day Elijah takes anger management so seriously. His deepest fear isn’t losing a fight. It’s becoming somebody the people he loves have to manage." }
+                ]
+              },
+              {
+                label: "DAMAGE REPORT",
+                title: "The One Where Nobody Was the Villain",
+                blocks: [
+                  { type: "p", text: "Elijah’s most recent serious relationship ended around a year before the current story. No cheating. No betrayal. No enormous screaming match. They loved each other." },
+                  { type: "p", text: "His partner needed a life with more stability. Glass Teeth was recording Pressure Language and preparing for another enormous touring cycle. Neither person could become what the other needed without resenting it. So they ended it. Kindly. Elijah hated this." },
+                  { type: "quote", text: "He understands: ‘They hurt me. I’m angry.’ He found ‘We love each other and this still doesn’t work’ significantly harder." },
+                  { type: "p", text: "They occasionally still send each other birthday messages. No secret affair. No hidden reunion. Just one of the relationships that taught Elijah that sometimes love and compatibility are two completely different questions." }
+                ]
+              },
+              {
+                label: "INCIDENT LOG",
+                title: "The German Traffic Cone Affair",
+                blocks: [
+                  { type: "p", text: "Nobody will explain this properly. During a European tour, Elijah and Niamh disappeared from the hotel after midnight. They returned at approximately 6:30 a.m. carrying one traffic cone, one disposable camera, and absolutely no usable explanation." },
+                  { type: "quote", text: "Benji: ‘Where did the traffic cone come from?’ Elijah: ‘Outside.’ Benji: ‘Everything is outside.’ Niamh: ‘Then you’ve solved it.’" },
+                  { type: "p", text: "The cone somehow returned to Chicago. It has since moved rehearsal spaces twice. Someone wrote GLASS TEETH PROPERTY on it. Claudia has attempted to throw it away. The band collectively refuses. It is now an artifact." }
+                ]
+              }
+            ]
+          }
         }
       ]
     }

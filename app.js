@@ -168,6 +168,36 @@
     </article>`;
   }
 
+  function spoilerBlock(block) {
+    if (block.type === 'quote') return `<blockquote>${escapeHTML(block.text)}</blockquote>`;
+    return `<p>${escapeHTML(block.text)}</p>`;
+  }
+
+  function fractureFiles(person) {
+    if (!person.spoilers) return '';
+    return `<section class="spoiler-vault glass-vault" aria-label="Private files and spoilers for ${escapeHTML(person.name)}">
+      <details class="vault-gate">
+        <summary>
+          <span>GLASS TEETH // PRIVATE ARCHIVE</span>
+          <strong>THE FRACTURE FILES <i aria-hidden="true">⟡</i></strong>
+          <b>CLICK HERE FOR ${escapeHTML(person.name.toUpperCase())}'S PRIVATE FILES / SPOILERS</b>
+          <small>${escapeHTML(person.spoilers.code)} // SEALED</small>
+        </summary>
+        <div class="vault-contents">
+          <header><span>⚠ RESTRICTED ARCHIVE</span><p>Spoilers below. Some things look better through unbroken glass.</p><strong>Proceed recklessly.</strong></header>
+          <div class="fracture-stack">${person.spoilers.files.map(file => `<details class="fracture-file">
+            <summary><span>+ ${escapeHTML(file.label)}</span><strong>${escapeHTML(file.title)}</strong></summary>
+            <div class="fracture-copy">
+              ${file.warning ? `<p class="warning-tape">${escapeHTML(file.warning)}</p>` : ''}
+              ${file.blocks.map(spoilerBlock).join('')}
+            </div>
+          </details>`).join('')}</div>
+          <footer>${escapeHTML(person.spoilers.code)} // IRIS MARLOWE // UNAUTHORIZED COPY</footer>
+        </div>
+      </details>
+    </section>`;
+  }
+
   function personPage(record) {
     const { band, ...person } = record;
     setPage(person.name, band.id);
@@ -182,6 +212,7 @@
         <aside class="file-stats"><span class="red-stamp">ON FILE</span><dl><dt>AGE</dt><dd>${escapeHTML(person.age)}</dd><dt>BAND</dt><dd>${escapeHTML(band.name)}</dd><dt>ROLE</dt><dd>${escapeHTML(person.role)}</dd><dt>FILE MARKER</dt><dd>${escapeHTML(person.marker)}</dd></dl></aside>
         <section class="profile-copy"><span class="label">IRIS MARLOWE / FIELD NOTES</span><p class="lead">${escapeHTML(person.deck)}</p><p>${escapeHTML(person.bio)}</p><div class="fact-strips">${person.facts.map(fact => `<span>${escapeHTML(fact)}</span>`).join('')}</div><blockquote>“${escapeHTML(person.iris)}”<small>— handwritten in the contact-sheet envelope</small></blockquote></section>
       </div>
+      ${fractureFiles(person)}
       <nav class="peer-files" aria-label="More band member files"><span>OTHER ${escapeHTML(band.short)} FILES</span>${peers.map(peer => `<a href="#/person/${peer.id}">${escapeHTML(peer.name)} ↗</a>`).join('')}</nav>
     </article>`;
   }
