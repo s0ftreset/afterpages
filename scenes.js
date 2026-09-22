@@ -304,6 +304,9 @@ window.FOXGLOVE = {
         {
           id: "noah-bellamy",
           name: "Noah Bellamy",
+          image: "assets/photos/noah-bellamy.webp",
+          imageAlt: "Backstage studio portrait of Noah Bellamy with tousled black hair and a pale streak, wearing layered black clothing",
+          imagePosition: "50% 30%",
           age: "30",
           role: "Lead vocals / synth / rhythm guitar / lyricist",
           marker: "HEART / OPEN CIRCUIT",
@@ -349,6 +352,9 @@ window.FOXGLOVE = {
         {
           id: "axel-bellamy",
           name: "Axel Bellamy",
+          image: "assets/photos/axel-bellamy.webp",
+          imageAlt: "Backstage portrait of Axel Bellamy seated in front of his drum kit with drumsticks in hand",
+          imagePosition: "50% 28%",
           age: "32–33",
           role: "Drums / electronic percussion / sampling",
           marker: "STRUCTURE / LOAD-BEARING WALL",
@@ -394,6 +400,9 @@ window.FOXGLOVE = {
         {
           id: "niamh-kelleher",
           name: "Niamh Kelleher",
+          image: "assets/photos/niamh-kelleher.webp",
+          imageAlt: "Studio portrait of Niamh Kelleher with dark auburn hair, one bleached panel, green eyes, and traditional tattoos",
+          imagePosition: "50% 28%",
           age: "Early 30s",
           role: "Lead guitar / programmer / producer / co-arranger",
           marker: "THE BLADE / SONIC ARCHITECT",
@@ -443,6 +452,9 @@ window.FOXGLOVE = {
         {
           id: "elijah-dizon",
           name: "Elijah Dizon",
+          image: "assets/photos/elijah-dizon.webp",
+          imageAlt: "Backstage loading-alley portrait of Elijah Dizon with wet black hair, piercings, and tattooed arms",
+          imagePosition: "50% 27%",
           age: "30",
           role: "Bass / backing vocals",
           marker: "THE SHIELD / LIVE WIRE",
