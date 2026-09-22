@@ -544,7 +544,9 @@ window.FOXGLOVE = {
       note: "this was not, despite three interviews claiming otherwise, detroit."
     },
     {
-      id: "fg-002", image: "", band: "Glass Teeth", place: "Chicago", year: "2016",
+      id: "fg-002", image: "assets/photos/glass-teeth-before-warehouse.webp",
+      imageAlt: "Glass Teeth gathered in a dim rehearsal room while Niamh repairs a guitar pedal and Noah holds the flashlight",
+      band: "Glass Teeth", place: "Chicago", year: "2016",
       title: "Before the warehouse video",
       caption: "Niamh on the floor with three pedals open. Noah holding the flashlight wrong. Axel choosing not to comment.",
       note: "elijah arrived with coffee and stayed for a decade."
