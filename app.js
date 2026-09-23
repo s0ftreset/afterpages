@@ -164,6 +164,13 @@
       </header>
       <section class="band-intro"><span class="drop-number">${band.members.length}</span><div><span class="label">ON THE RECORD</span><p>${escapeHTML(band.summary)}</p></div><blockquote>${escapeHTML(band.pullQuote)}</blockquote></section>
       <section class="lineup" aria-labelledby="lineup-title"><div class="section-slug"><span>THE LINEUP</span><h2 id="lineup-title">Individual files.</h2><p>Public facts, private observations, and photographs they approved under protest.</p></div><div class="member-grid">${band.members.map(memberCard).join('')}</div></section>
+      ${band.id === 'glass-teeth' ? `<section class="studio-animals" aria-labelledby="studio-animals-title">
+        <div class="section-slug"><span>UNOFFICIAL PERSONNEL / 02</span><h2 id="studio-animals-title">Moth &amp; Bruno.</h2><p>Two more regulars in the Glass Teeth studio.</p></div>
+        <div class="studio-animals-layout">
+          <figure class="studio-animals-photo"><img src="assets/photos/glass-teeth-moth-bruno.webp" alt="Moth, a fluffy black-and-white cat, cuddled beside Bruno, a brown-and-white pit mix, on a studio rug" loading="lazy"><figcaption>PHOTO: IRIS MARLOWE / STUDIO FLOOR</figcaption></figure>
+          <div class="studio-animals-notes"><p><strong>MOTH</strong><span>NOAH'S CAT</span></p><p><strong>BRUNO</strong><span>ELIJAH'S DOG</span></p><small>Both appear to have claimed the best spot in the room.</small></div>
+        </div>
+      </section>` : ''}
       <section class="band-contact"><div class="section-slug"><span>FROM THE CONTACT SHEETS</span><h2>Things the press release missed.</h2></div><div class="mini-contact-grid">${photos.map(contactPhoto).join('') || data.archive.slice(0, 2).map(contactPhoto).join('')}</div></section>
     </article>`;
   }

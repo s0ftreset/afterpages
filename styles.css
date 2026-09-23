@@ -141,6 +141,15 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .member-card > strong { margin-top: auto; }
 .mini-contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 35px; align-items: start; }
 .mini-contact-grid .contact-photo:nth-child(3) { grid-column: 1 / -1; width: 65%; margin-left: auto; }
+.studio-animals { padding: 90px clamp(18px, 4vw, 65px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #201a18; }
+.studio-animals-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(220px, .5fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.studio-animals-photo { margin: 0; padding: 12px 12px 18px; background: var(--paper); color: var(--ink); transform: rotate(-1.5deg); box-shadow: 8px 14px 25px #0006; }
+.studio-animals-photo img { display: block; width: 100%; height: auto; }
+.studio-animals-photo figcaption { padding: 15px 6px 0; font: 700 10px var(--mono); letter-spacing: .08em; }
+.studio-animals-notes p { margin: 0 0 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.studio-animals-notes strong { display: block; font: 400 clamp(45px, 5vw, 76px)/.85 var(--display); }
+.studio-animals-notes span { display: block; margin-top: 12px; color: var(--rust); font: 700 11px var(--mono); letter-spacing: .1em; }
+.studio-animals-notes small { color: var(--paper-dark); font: italic 20px/1.4 var(--serif); }
 
 /* Contact photos / secret archive */
 .contact-photo { position: relative; margin: 0; padding: 12px 12px 25px; background: #d8cdb8; color: var(--ink); box-shadow: 7px 12px 25px #0006; }
@@ -311,6 +320,7 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 }
 
 @media (max-width: 760px) {
+  .studio-animals { padding-block: 68px; }.studio-animals-layout { grid-template-columns: 1fr; }.studio-animals-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }.studio-animals-notes p { margin: 0; }.studio-animals-notes small { grid-column: 1 / -1; }
   .utility-strip span:first-child, .utility-strip span:last-child, .masthead-row p { display: none; }
   .utility-strip { justify-content: center; }
   .masthead-row { justify-content: center; padding-top: 22px; }
