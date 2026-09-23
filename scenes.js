@@ -519,7 +519,7 @@ window.FOXGLOVE = {
       label: "SCENE FAMILY / CROSS-FILE",
       title: "Saints x Snakes",
       subtitle: "No Saints Here and the Snake Skins have been sharing rooms, trouble, and old favors for years.",
-      copy: "They came up through overlapping clubs, promoters, support slots, and touring circuits. The Snake Skins were the older, rougher institution; No Saints Here became the bigger commercial success. The history between them includes borrowed gear, emergency rides, collaborations, fights, grudges, hospital waits, and three-in-the-morning calls.",
+      copy: "They came up through overlapping clubs, promoters, support slots, and touring circuits. The Snake Skins were the older, rougher institution. The history between them includes borrowed gear, emergency rides, collaborations, fights, grudges, hospital waits, and three-in-the-morning calls.",
       pull: "Shared bills are called Saints & Snakes. Something always goes wrong; someone always comes back.",
       notes: ["TWO BANDS", "ONE CIRCUIT", "OLD FAVORS", "FAMILY, HOWEVER LOUD"],
       roster: [
