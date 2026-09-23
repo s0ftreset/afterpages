@@ -289,6 +289,23 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .dispatch-notes { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 35px; }
 .dispatch-copy .hand-note { max-width: 420px; margin-top: 50px; font-size: 22px; }
 .single-contact { width: min(740px, 90%); margin: 45px auto; }.single-contact > .label { display: block; margin-bottom: 35px; }
+.saints-snakes-page .dispatch-hero h1 { max-width: 11ch; font-size: clamp(90px, 13vw, 185px); }
+.saints-snakes-lead { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: clamp(35px, 7vw, 110px); padding: 75px 2vw 95px; }
+.saints-snakes-lead blockquote { max-width: 900px; margin: 30px 0; font: 400 clamp(47px, 5vw, 75px)/.9 var(--display); text-transform: uppercase; }
+.saints-snakes-lead p { max-width: 67ch; color: var(--paper-dark); font: 19px/1.7 var(--serif); }
+.saints-snakes-roster { align-self: start; padding: 25px; border: 1px solid var(--line); background: var(--black-2); transform: rotate(1deg); }
+.saints-snakes-roster ul { padding: 0; margin: 28px 0; list-style: none; }
+.saints-snakes-roster li { display: flex; justify-content: space-between; gap: 15px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.saints-snakes-roster strong { font: 24px/.95 var(--display); text-transform: uppercase; }
+.saints-snakes-roster li span { text-align: right; color: var(--paper-dark); font: 10px/1.4 var(--mono); text-transform: uppercase; }
+.saints-snakes-roster a { display: inline-block; color: var(--rust); font: 700 11px/1.5 var(--mono); text-decoration: none; }
+.saints-snakes-roster a:hover { text-decoration: underline; }
+.saints-snakes-connections { padding: 65px 2vw 25px; border-top: 1px solid var(--line); }
+.saints-snakes-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.saints-snakes-grid article { padding: 25px; border: 1px solid var(--line); background: var(--black-2); }
+.saints-snakes-grid h3 { margin: 0 0 15px; font: 35px/.95 var(--display); text-transform: uppercase; }
+.saints-snakes-grid p { margin: 0; color: var(--paper-dark); font: 16px/1.55 var(--serif); }
+.saints-snakes-hand { margin: 50px 2vw 0 auto; max-width: 400px; text-align: right; }
 
 /* Colophon / 404 */
 .colophon { display: grid; grid-template-columns: 1.1fr .9fr; gap: 8vw; min-height: 75vh; padding: clamp(70px, 9vw, 140px) clamp(18px, 4vw, 65px); }
@@ -320,6 +337,7 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 }
 
 @media (max-width: 760px) {
+  .saints-snakes-page .dispatch-hero h1 { font-size: clamp(69px, 16vw, 115px); }.saints-snakes-lead { grid-template-columns: 1fr; }.saints-snakes-grid { grid-template-columns: 1fr; }
   .studio-animals { padding-block: 68px; }.studio-animals-layout { grid-template-columns: 1fr; }.studio-animals-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }.studio-animals-notes p { margin: 0; }.studio-animals-notes small { grid-column: 1 / -1; }
   .utility-strip span:first-child, .utility-strip span:last-child, .masthead-row p { display: none; }
   .utility-strip { justify-content: center; }

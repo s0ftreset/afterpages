@@ -515,13 +515,27 @@ window.FOXGLOVE = {
       notes: ["MILES REYES / 32", "VARIETY STREAMER", "MEXICAN-AMERICAN", "AFTER MIDNIGHT"]
     },
     {
-      id: "good-company",
-      label: "SHOP NOTES",
-      title: "Good Company",
-      subtitle: "Good tattoos. Better company.",
-      copy: "Miles Reyes's warm-industrial tattoo shop is full of art, plants, old furniture, clean steel, and the kind of regulars who stopped pretending they only came for appointments. Tessa Nguyen runs the floor, the piercings, and occasionally Miles's remaining common sense.",
-      pull: "A tattoo shop for people who need somewhere to stay after the stencil comes off.",
-      notes: ["OWNER: MILES REYES", "SHOP MANAGER: TESSA NGUYEN", "WARM INDUSTRIAL", "APPOINTMENT BOOK: FULL"]
+      id: "saints-x-snakes",
+      label: "SCENE FAMILY / CROSS-FILE",
+      title: "Saints x Snakes",
+      subtitle: "No Saints Here and the Snake Skins have been sharing rooms, trouble, and old favors for years.",
+      copy: "They came up through overlapping clubs, promoters, support slots, and touring circuits. The Snake Skins were the older, rougher institution; No Saints Here became the bigger commercial success. The history between them includes borrowed gear, emergency rides, collaborations, fights, grudges, hospital waits, and three-in-the-morning calls.",
+      pull: "Shared bills are called Saints & Snakes. Something always goes wrong; someone always comes back.",
+      notes: ["TWO BANDS", "ONE CIRCUIT", "OLD FAVORS", "FAMILY, HOWEVER LOUD"],
+      roster: [
+        { name: "Scorch Virelli", role: "Vocals" },
+        { name: "Max Delaney", role: "Lead guitar" },
+        { name: "Shane Halbrook", role: "Bass" },
+        { name: "Cody Thibodaux", role: "Drums" },
+        { name: "Kayla Mercer", role: "Cello / keyboards" },
+        { name: "Ricky Knox", role: "Manager" }
+      ],
+      connections: [
+        { title: "Cody / the bridge", copy: "Cody is the easiest way across the divide. Dolly adores him, Jett treats him like a younger brother, and Forrest can jam with him for hours." },
+        { title: "Scorch / Astrid", copy: "Screaming backstage arguments. Months later, silent cigarettes. Respect that neither of them would call by its name." },
+        { title: "Max / Jett", copy: "Instant partners in terrible decisions, and somehow capable of getting an honest conversation out of each other." },
+        { title: "Ricky / Mara", copy: "A long management cold war over billing, buses, hotels, and promoters. Ricky once helped NSH land a crucial early support slot." }
+      ]
     },
     {
       id: "rory",

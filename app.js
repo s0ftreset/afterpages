@@ -261,8 +261,9 @@
   }
 
   function dispatchPage(item) {
+    if (item.id === 'saints-x-snakes') return saintsSnakesPage(item);
     setPage(item.title, item.id);
-    const related = data.archive.find(entry => entry.band === item.title || (item.id === 'good-company' && entry.place === 'Good Company'));
+    const related = data.archive.find(entry => entry.band === item.title);
     app.innerHTML = `<article class="dispatch-page">
       <a class="back-link" href="#/">← RETURN TO THE FRONT PAGE</a>
       <header class="dispatch-hero"><span class="label">${escapeHTML(item.label)} / FOXGLOVE SIDE DESK</span><h1>${escapeHTML(item.title)}</h1><p>${escapeHTML(item.subtitle)}</p></header>
@@ -271,6 +272,20 @@
         <div class="dispatch-copy"><blockquote>${escapeHTML(item.pull)}</blockquote><p>${escapeHTML(item.copy)}</p><div class="dispatch-notes">${item.notes.map(note => `<span>${escapeHTML(note)}</span>`).join('')}</div><p class="hand-note">not everything important happens on a stage.</p></div>
       </div>
       ${related ? `<section class="single-contact"><span class="label">FROM THE UNPUBLISHED ROLL</span>${contactPhoto(related, data.archive.indexOf(related))}</section>` : ''}
+    </article>`;
+  }
+
+  function saintsSnakesPage(item) {
+    setPage(item.title, item.id);
+    app.innerHTML = `<article class="dispatch-page saints-snakes-page">
+      <a class="back-link" href="#/">← RETURN TO THE FRONT PAGE</a>
+      <header class="dispatch-hero"><span class="label">${escapeHTML(item.label)} / FOXGLOVE CROSS-FILE</span><h1>${escapeHTML(item.title)}</h1><p>${escapeHTML(item.subtitle)}</p></header>
+      <section class="saints-snakes-lead" aria-label="The shared history">
+        <div><span class="label">NO SAINTS HERE × THE SNAKE SKINS</span><blockquote>${escapeHTML(item.pull)}</blockquote><p>${escapeHTML(item.copy)}</p><div class="dispatch-notes">${item.notes.map(note => `<span>${escapeHTML(note)}</span>`).join('')}</div></div>
+        <aside class="saints-snakes-roster"><span class="label">THE SNAKE SKINS / PERSONNEL FILE</span><ul>${item.roster.map(person => `<li><strong>${escapeHTML(person.name)}</strong><span>${escapeHTML(person.role)}</span></li>`).join('')}</ul><a href="#/band/no-saints-here">OPEN THE NO SAINTS HERE FILE ↗</a></aside>
+      </section>
+      <section class="saints-snakes-connections" aria-labelledby="connections-title"><div class="section-slug"><span>ON THE SAME BILL</span><h2 id="connections-title">The overlap.</h2><p>People keep receipts. Iris keeps the contact sheets.</p></div><div class="saints-snakes-grid">${item.connections.map(connection => `<article><h3>${escapeHTML(connection.title)}</h3><p>${escapeHTML(connection.copy)}</p></article>`).join('')}</div></section>
+      <p class="hand-note saints-snakes-hand">the old favors always outlive the headlines. — iris</p>
     </article>`;
   }
 
@@ -289,7 +304,7 @@
     setPage('Colophon', 'about');
     app.innerHTML = `<article class="colophon">
       <div><span class="label">ABOUT THIS MESS</span><h1>Rolling Stone got shoved down a staircase by a Xerox machine.</h1></div>
-      <div class="colophon-copy"><p class="lead">FOXGLOVE is Iris Marlowe's independent zine and working archive: grainy documentary photography, bad venue lighting, dark botanical marginalia, and the moments between the moments everybody else publishes.</p><p>It covers No Saints Here and Glass Teeth without pretending their history can be flattened into rival headlines. The side desk follows Dead Air, Good Company, Rory Deveraux, and anything else worth keeping after the room empties.</p><blockquote>Nothing is neutral. Especially not a photograph.</blockquote><dl><dt>EDITOR / PHOTOGRAPHER</dt><dd>Iris Marlowe</dd><dt>FORMAT</dt><dd>Photocopy, film, web, whatever survives</dd><dt>RATINGS</dt><dd>Crossed out on principle</dd></dl></div>
+      <div class="colophon-copy"><p class="lead">FOXGLOVE is Iris Marlowe's independent zine and working archive: grainy documentary photography, bad venue lighting, dark botanical marginalia, and the moments between the moments everybody else publishes.</p><p>It covers No Saints Here and Glass Teeth without pretending their history can be flattened into rival headlines. The side desk follows Dead Air, Saints x Snakes, Rory Deveraux, and anything else worth keeping after the room empties.</p><blockquote>Nothing is neutral. Especially not a photograph.</blockquote><dl><dt>EDITOR / PHOTOGRAPHER</dt><dd>Iris Marlowe</dd><dt>FORMAT</dt><dd>Photocopy, film, web, whatever survives</dd><dt>RATINGS</dt><dd>Crossed out on principle</dd></dl></div>
     </article>`;
   }
 
