@@ -280,6 +280,7 @@
     app.innerHTML = `<article class="dispatch-page saints-snakes-page">
       <a class="back-link" href="#/">← RETURN TO THE FRONT PAGE</a>
       <header class="dispatch-hero"><span class="label">${escapeHTML(item.label)} / FOXGLOVE CROSS-FILE</span><h1>${escapeHTML(item.title)}</h1><p>${escapeHTML(item.subtitle)}</p></header>
+      <figure class="saints-snakes-photo"><img src="assets/photos/saints-snakes-panel.webp" alt="A blonde singer and a tattooed frontman face each other across microphones at a crowded rock panel" width="1536" height="1024"><figcaption>NO SAINTS HERE × THE SNAKE SKINS / PHOTO: IRIS MARLOWE</figcaption></figure>
       <section class="saints-snakes-lead" aria-label="The shared history">
         <div><span class="label">NO SAINTS HERE × THE SNAKE SKINS</span><blockquote>${escapeHTML(item.pull)}</blockquote><p>${escapeHTML(item.copy)}</p><div class="dispatch-notes">${item.notes.map(note => `<span>${escapeHTML(note)}</span>`).join('')}</div></div>
         <aside class="saints-snakes-roster"><span class="label">THE SNAKE SKINS / PERSONNEL FILE</span><ul>${item.roster.map(person => `<li><strong>${escapeHTML(person.name)}</strong><span>${escapeHTML(person.role)}</span></li>`).join('')}</ul><a href="#/band/no-saints-here">OPEN THE NO SAINTS HERE FILE ↗</a></aside>
@@ -303,7 +304,7 @@
   function aboutPage() {
     setPage('Colophon', 'about');
     app.innerHTML = `<article class="colophon">
-      <div><span class="label">ABOUT THIS MESS</span><h1>Rolling Stone got shoved down a staircase by a Xerox machine.</h1></div>
+      <div><span class="label">ABOUT THIS MESS</span><h1>Rolling Stone got shoved down a staircase by a Xerox machine.</h1><figure class="iris-portrait"><img src="assets/photos/iris-marlowe-foxglove.webp" alt="Iris Marlowe with her camera in a textured FOXGLOVE zine portrait" width="1100" height="1374" loading="lazy"><figcaption>IRIS MARLOWE / EDITOR & PHOTOGRAPHER</figcaption></figure></div>
       <div class="colophon-copy"><p class="lead">FOXGLOVE is Iris Marlowe's independent zine and working archive: grainy documentary photography, bad venue lighting, dark botanical marginalia, and the moments between the moments everybody else publishes.</p><p>It covers No Saints Here and Glass Teeth without pretending their history can be flattened into rival headlines. The side desk follows Dead Air, Saints x Snakes, Rory Deveraux, and anything else worth keeping after the room empties.</p><blockquote>Nothing is neutral. Especially not a photograph.</blockquote><dl><dt>EDITOR / PHOTOGRAPHER</dt><dd>Iris Marlowe</dd><dt>FORMAT</dt><dd>Photocopy, film, web, whatever survives</dd><dt>RATINGS</dt><dd>Crossed out on principle</dd></dl></div>
     </article>`;
   }

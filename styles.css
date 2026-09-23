@@ -290,6 +290,9 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .dispatch-copy .hand-note { max-width: 420px; margin-top: 50px; font-size: 22px; }
 .single-contact { width: min(740px, 90%); margin: 45px auto; }.single-contact > .label { display: block; margin-bottom: 35px; }
 .saints-snakes-page .dispatch-hero h1 { max-width: 11ch; font-size: clamp(90px, 13vw, 185px); }
+.saints-snakes-photo { margin: 15px 2vw 0; padding: 9px; background: var(--paper); transform: rotate(-.35deg); }
+.saints-snakes-photo img { display: block; width: 100%; height: auto; }
+.saints-snakes-photo figcaption { padding: 12px 5px 4px; color: var(--black); font: 700 10px/1.4 var(--mono); letter-spacing: .08em; }
 .saints-snakes-lead { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: clamp(35px, 7vw, 110px); padding: 75px 2vw 95px; }
 .saints-snakes-lead blockquote { max-width: 900px; margin: 30px 0; font: 400 clamp(47px, 5vw, 75px)/.9 var(--display); text-transform: uppercase; }
 .saints-snakes-lead p { max-width: 67ch; color: var(--paper-dark); font: 19px/1.7 var(--serif); }
@@ -310,6 +313,9 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 /* Colophon / 404 */
 .colophon { display: grid; grid-template-columns: 1.1fr .9fr; gap: 8vw; min-height: 75vh; padding: clamp(70px, 9vw, 140px) clamp(18px, 4vw, 65px); }
 .colophon h1 { margin: 25px 0; font: 400 clamp(64px, 8vw, 124px)/.79 var(--display); text-transform: uppercase; }
+.iris-portrait { max-width: 510px; margin: 65px 0 0; padding: 8px; background: var(--paper); transform: rotate(-1deg); }
+.iris-portrait img { display: block; width: 100%; height: auto; }
+.iris-portrait figcaption { padding: 12px 5px 4px; color: var(--black); font: 700 10px/1.4 var(--mono); letter-spacing: .08em; }
 .colophon-copy > p { font: 18px/1.65 var(--serif); color: var(--paper-dark); }
 .colophon-copy .lead { color: var(--paper); font-size: 24px; }
 .colophon-copy blockquote { margin: 45px 0; padding-left: 25px; border-left: 4px solid var(--blood); font: italic 28px/1.4 var(--serif); }
