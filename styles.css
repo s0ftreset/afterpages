@@ -88,6 +88,14 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
 .section-slug h2 { margin: 0; font: 400 clamp(46px, 6vw, 91px)/.84 var(--display); letter-spacing: -.035em; text-transform: uppercase; }
 .section-slug > p { margin: 0; padding-bottom: 5px; font: italic 16px/1.5 var(--serif); color: var(--paper-dark); }
 .band-files, .dispatch-section, .lineup, .band-contact { padding: 90px clamp(18px, 4vw, 65px); }
+.band-songs { padding: 90px clamp(18px, 4vw, 65px); border-block: 1px solid var(--line); background: var(--black-2); }
+.song-list { margin: 0; padding: 0; list-style: none; border-top: 5px double var(--paper-dark); }
+.song-row { display: grid; grid-template-columns: 55px minmax(0, 1fr) auto; gap: clamp(15px, 3vw, 40px); align-items: center; min-height: 83px; padding: 16px 1vw; border-bottom: 1px solid var(--line); }
+.song-row:nth-child(odd) { background: rgba(255,255,255,.025); }
+.song-number, .song-mark { color: var(--rust); font: 700 11px/1 var(--mono); }
+.song-row h3 { margin: 0; font: 400 clamp(27px, 3vw, 42px)/.9 var(--display); text-transform: uppercase; }
+.song-row p { margin: 9px 0 0; color: var(--paper-dark); font: italic 15px/1.4 var(--serif); }
+.song-row audio { max-width: min(300px, 100%); height: 40px; accent-color: var(--blood); }
 .band-teaser-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; }
 .band-teaser { position: relative; display: grid; grid-template-columns: 1fr .8fr; min-height: 500px; padding: clamp(24px, 3vw, 45px); overflow: hidden; border: 1px solid var(--line); color: inherit; text-decoration: none; background: var(--black-2); }
 .band-teaser:hover { border-color: var(--rust); }
@@ -361,6 +369,9 @@ main { min-height: 65vh; border-inline: 1px solid var(--line); }
   .section-slug { display: block; }
   .section-slug h2 { margin-top: 12px; }
   .section-slug > p { margin-top: 18px; }
+  .band-songs { padding-block: 68px; }
+  .song-row { grid-template-columns: 34px minmax(0, 1fr) 16px; }
+  .song-row audio { grid-column: 2 / -1; width: 100%; }
   .band-teaser { display: block; padding-bottom: 60px; }
   .band-teaser h2 { font-size: 64px; }
   .band-negative { position: absolute; width: 54%; min-height: 0; right: -5%; bottom: 70px; opacity: .68; }

@@ -23,6 +23,20 @@ window.FOXGLOVE = {
       pullQuote: "They got famous by making every private disaster sound good at full volume.",
       summary: "Five people who should not work this well together. No Saints Here turns raw nerve, old loyalty, and the occasional catastrophic decision into arena-sized rock without sanding off the club-floor grime.",
       irisNote: "They hate being called a family. This is because they are one.",
+      songs: [
+        { title: "Bad Habits Die Screaming" },
+        { title: "Bite Back" },
+        { title: "Your Girlfriend Hates Me" },
+        { title: "Knuckles" },
+        { title: "Love Me Like a Car Crash" },
+        { title: "Bad Dog" },
+        { title: "Bleach & Blood" },
+        { title: "Motel Bible" },
+        { title: "Call Your Mother", note: "One of the gentlest crisis songs in the file." },
+        { title: "Crawl" },
+        { title: "Everyone Leaves Eventually" },
+        { title: "Purgatory", note: "An affectionate song about life on the bus." }
+      ],
       members: [
         {
           id: "astrid-vale",
@@ -503,18 +517,6 @@ window.FOXGLOVE = {
 
   dispatches: [
     {
-      id: "dead-air",
-      label: "LATE-NIGHT TRANSMISSION",
-      title: "Dead Air",
-      image: "assets/photos/miles-stream-room.webp",
-      imageAlt: "Miles Reyes sitting at his late-night streaming desk surrounded by tattoo art, books, candles, and recording equipment",
-      imagePosition: "50% 36%",
-      subtitle: "The red light is on. Miles Reyes is pretending this is normal.",
-      copy: "Streams after closing, chat moving too fast, ink still on his hands. DeadAirMiles is the online half of a life built between a tattoo machine and a camera—warmer, funnier, and far less anonymous than the handle suggests.",
-      pull: "He calls it dead air. Thousands of people keep showing up to listen.",
-      notes: ["MILES REYES / 32", "VARIETY STREAMER", "MEXICAN-AMERICAN", "AFTER MIDNIGHT"]
-    },
-    {
       id: "saints-x-snakes",
       label: "SCENE FAMILY / CROSS-FILE",
       title: "Saints x Snakes",
@@ -591,13 +593,6 @@ window.FOXGLOVE = {
       title: "No clean signal",
       caption: "Tape loops, coffee rings, a baritone guitar, and the exact moment the power supply started smoking.",
       note: "niamh says it was supposed to do that. it was not."
-    },
-    {
-      id: "fg-006", image: "assets/photos/miles-horror-stream.webp", band: "Dead Air", place: "Good Company", year: "2026",
-      imageAlt: "Screenshot of Miles Reyes calmly streaming a haunted-house horror game while the chat panics",
-      title: "Not even flinching",
-      caption: "Chat is losing its mind. Miles is walking toward the haunted hallway on purpose.",
-      note: "screenshot from a horror stream. how is this man never scared?"
     }
   ]
 };
