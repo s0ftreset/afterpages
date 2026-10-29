@@ -77,6 +77,156 @@ window.FOXGLOVE = {
                 ]
               },
               {
+                "label": "ASTRID VALE + SIN ANDERS",
+                "title": "THE ONE WE DON’T JOKE ABOUT. MUCH.",
+                "blocks": [
+                  {
+                    "type": "p",
+                    "text": "Okay. Sin."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Yes, that Sin."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Street Rats Sin Anders. Human cigarette burn. Professional asshole. Man who could turn “good morning” into grounds for aggravated assault."
+                  },
+                  {
+                    "type": "p",
+                    "text": "He and Astrid were together before No Saints Here got properly famous. Not “hooked up a couple times” together. Together together. I have unfortunately witnessed tenderness."
+                  },
+                  {
+                    "type": "p",
+                    "text": "They met because our bands kept ending up on the same bills and immediately hated each other in that extremely suspicious way where two people who supposedly can’t stand each other somehow spend the entire fucking night standing three feet apart."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Then there were cigarettes outside venues."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Then rides home."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Then Sin started appearing in our apartment kitchen wearing yesterday’s clothes."
+                  },
+                  {
+                    "type": "p",
+                    "text": "You do the math."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Here’s the part Astrid will murder me for:"
+                  },
+                  {
+                    "type": "p",
+                    "text": "They were actually good together."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Not healthy little matching-pajama Instagram good. Absolutely fucking not."
+                  },
+                  {
+                    "type": "p",
+                    "text": "They fought. They antagonized each other for sport. Sin called her unbearable. She called him emotionally constipated. Once they argued outside a venue for twenty minutes and then realized they’d been agreeing with each other the entire time."
+                  },
+                  {
+                    "type": "p",
+                    "text": "But they understood each other."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Sin knew when Astrid needed somebody to stay without making her ask."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Astrid knew when Sin was joking because something hurt."
+                  },
+                  {
+                    "type": "p",
+                    "text": "And neither of them made the other pretend to be nicer than they were."
+                  },
+                  {
+                    "type": "p",
+                    "text": "So what happened?"
+                  },
+                  {
+                    "type": "p",
+                    "text": "Nothing."
+                  },
+                  {
+                    "type": "p",
+                    "text": "That’s the shitty part."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Nobody cheated. Nobody betrayed anybody. There isn’t some secret villain in this story."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Their bands got busier. They spent more time apart. Both of them were terrified of needing somebody who might leave, and instead of discussing that like people with functioning frontal lobes, they started preparing for the breakup before there was one."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Eventually they prepared so well they fucking had it."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Astrid wrote Bad Dog when she was still angry enough to think Sin was the problem."
+                  },
+                  {
+                    "type": "p",
+                    "text": "She wrote Everyone Leaves Eventually when she realized he wasn’t the only one standing with one foot out the door."
+                  },
+                  {
+                    "type": "p",
+                    "text": "If you’re asking whether she still loves him, mind your business."
+                  },
+                  {
+                    "type": "p",
+                    "text": "If you’re asking whether they’re getting back together, I genuinely don’t know."
+                  },
+                  {
+                    "type": "p",
+                    "text": "If you’re asking whether the air gets fucking weird when Street Rats and No Saints Here are backstage together?"
+                  },
+                  {
+                    "type": "p",
+                    "text": "Oh my God. Yes."
+                  },
+                  {
+                    "type": "p",
+                    "text": "They’ll call each other dickhead, steal each other’s cigarettes and behave completely normally."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Meanwhile everyone else is suddenly fascinated by the ceiling."
+                  },
+                  {
+                    "type": "p",
+                    "text": "For the record, I don’t think Sin was the love of Astrid’s life."
+                  },
+                  {
+                    "type": "p",
+                    "text": "I think he was worse."
+                  },
+                  {
+                    "type": "p",
+                    "text": "He was the one she never got to find out about."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Anyway."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Next question before she finds this page."
+                  }
+                ]
+              },
+              {
                 label: "A STORY DOLLY SWEARS IS TRUE",
                 title: "The Great Astrid Arrest That Wasn’t",
                 blocks: [
@@ -285,6 +435,180 @@ window.FOXGLOVE = {
                   { type: "p", text: "I once hooked up with somebody because they complimented my thighs correctly. Correctly is important." },
                   { type: "p", text: "And yes, there is one actual Ex. We loved each other. We were also fucking terrible together. Those statements can coexist. Sometimes somebody can matter enormously and still not belong in your life forever. Look at me being emotionally healthy. Disgusting." },
                   { type: "note", text: "I maintain a ranking system for exes based primarily on whether I’d trust them to feed my hypothetical cat. No, you cannot see it." }
+                ]
+              },
+              {
+                "label": "DOLLY GUTIERREZ + JAX MURPHY",
+                "title": "THIS IS NOT A LOVE STORY. STOP MAKING THAT FACE.",
+                "blocks": [
+                  {
+                    "type": "p",
+                    "text": "Jesus Christ."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Fine."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Yes, Jax and I have fucked."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Yes, more than once."
+                  },
+                  {
+                    "type": "p",
+                    "text": "No, I will not provide a number because first of all, rude, and second of all, I don’t fucking know."
+                  },
+                  {
+                    "type": "p",
+                    "text": "It started after an early show with the Freaky Foxes when we were both drunk, horny and apparently suffering from catastrophic decision-making."
+                  },
+                  {
+                    "type": "p",
+                    "text": "We agreed it was a one-time thing."
+                  },
+                  {
+                    "type": "p",
+                    "text": "That was hilarious."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Then our bands played together again."
+                  },
+                  {
+                    "type": "p",
+                    "text": "And again."
+                  },
+                  {
+                    "type": "p",
+                    "text": "And toured together."
+                  },
+                  {
+                    "type": "p",
+                    "text": "And there were hotels."
+                  },
+                  {
+                    "type": "p",
+                    "text": "And dressing rooms."
+                  },
+                  {
+                    "type": "p",
+                    "text": "And one extremely regrettable laundry room situation that is between me, Jax and whatever poor bastard reviewed the security footage."
+                  },
+                  {
+                    "type": "p",
+                    "text": "We have never officially dated."
+                  },
+                  {
+                    "type": "p",
+                    "text": "We are not secretly waiting for each other."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Jax sees other people. I see other people. Neither of us gets to police the other’s life."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Occasionally one of us still gets jealous anyway because the human brain is a defective little meat computer."
+                  },
+                  {
+                    "type": "p",
+                    "text": "The annoying part is that he’s one of my best friends."
+                  },
+                  {
+                    "type": "p",
+                    "text": "I know when he’s having fun and when he’s partying because he doesn’t want to be inside his own head."
+                  },
+                  {
+                    "type": "p",
+                    "text": "He knows when I’m actually laughing and when I’m doing it because admitting something hurt would ruin my whole fucking evening."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Which means casual sex occasionally comes with emotional insight."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Disgusting. Would not recommend."
+                  },
+                  {
+                    "type": "p",
+                    "text": "We’ve sworn it off multiple times."
+                  },
+                  {
+                    "type": "p",
+                    "text": "We’ve had very mature conversations about boundaries."
+                  },
+                  {
+                    "type": "p",
+                    "text": "We’ve agreed friendship matters more."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Then somebody gets drunk and looks at somebody for approximately four seconds too long and apparently civilization collapses."
+                  },
+                  {
+                    "type": "p",
+                    "text": "The bands stopped asking years ago."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Roman once saw Jax leaving my hotel room at nine in the morning, looked at him, looked at me, sighed, and kept walking."
+                  },
+                  {
+                    "type": "p",
+                    "text": "That’s basically our relationship status."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Could we date?"
+                  },
+                  {
+                    "type": "p",
+                    "text": "Probably."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Would it work?"
+                  },
+                  {
+                    "type": "p",
+                    "text": "Who the fuck knows."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Do I want to find out?"
+                  },
+                  {
+                    "type": "p",
+                    "text": "Ask me when he’s not within hearing distance."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Actually, don’t ask me at all."
+                  },
+                  {
+                    "type": "p",
+                    "text": "FINAL OFFICIAL STATEMENT:"
+                  },
+                  {
+                    "type": "p",
+                    "text": "Jax Murphy is my friend."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Sometimes I sit on his face."
+                  },
+                  {
+                    "type": "p",
+                    "text": "These facts are not mutually exclusive."
+                  },
+                  {
+                    "type": "p",
+                    "text": "Next fucking question."
+                  }
                 ]
               },
               {
