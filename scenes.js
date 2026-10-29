@@ -864,6 +864,78 @@ window.FOXGLOVE = {
       ]
     },
     {
+      "id": "foxes-x-saints",
+      "label": "SCENE FAMILY / CROSS-FILE",
+      "title": "Foxes x Saints",
+      "subtitle": "The Freaky Foxes and No Saints Here. Before the fame, after the show, still in each other’s dressing rooms.",
+      "copy": "The Freaky Foxes came out of Anaheim and met No Saints Here through the LA live circuit before either band was famous. Shared shows became shared equipment, dressing rooms, afterparties and touring history. The friendship stuck. They know the people behind the stage personas, remember the early versions, and have enough old stories to make a joint interview a questionable idea.",
+      "pull": "Two bands. One extended family. An alarming number of terrible ideas.",
+      "notes": [
+        "ANAHEIM / THE LA CIRCUIT",
+        "FRIENDS BEFORE FAME",
+        "BORROWED GEAR",
+        "SHARED CONSEQUENCES"
+      ],
+      "rosterLabel": "THE FREAKY FOXES / PERSONNEL FILE",
+      "roster": [
+        {
+          "name": "Knox Donovan",
+          "role": "Band member"
+        },
+        {
+          "name": "Jax Murphy",
+          "role": "Drums"
+        },
+        {
+          "name": "Tom Murphy",
+          "role": "Synth"
+        },
+        {
+          "name": "Frankie Richards",
+          "role": "Guitar"
+        },
+        {
+          "name": "Atlas Maloney",
+          "role": "Bass"
+        },
+        {
+          "name": "Dex Reilly",
+          "role": "Manager"
+        }
+      ],
+      "connections": [
+        {
+          "title": "Astrid / Knox",
+          "copy": "Guarded recognizes guarded. Neither is quick to trust strangers, and neither needs the other to become more approachable for the room. Their understanding sits beneath the sarcasm."
+        },
+        {
+          "title": "Forrest / Frankie",
+          "copy": "Quiet musician solidarity. Frankie is reserved with unfamiliar people; Forrest has never needed a room to be loud to feel occupied. In this particular crowd, having another guitarist who can let the chaos happen elsewhere counts for a lot."
+        },
+        {
+          "title": "Tom / Dolly",
+          "copy": "Tom saves his troublesome side for people he trusts. Dolly is very much one of those people. Together they cause problems; the rest of the room generally supplies the audience."
+        },
+        {
+          "title": "Jett / Jax / Atlas",
+          "copy": "An amplification problem. Jett’s appetite for provoking a reaction, Jax’s reckless humor and Atlas’s impulsive affection give terrible ideas far too much encouragement. All three belong here; nobody should mistake that for supervision."
+        },
+        {
+          "title": "Roman / Dex",
+          "copy": "Roman and the Foxes’ manager usually inherit the consequences. Whatever the others have borrowed, broken, forgotten or escalated eventually becomes somebody’s practical problem."
+        },
+        {
+          "title": "Dolly / Jax",
+          "copy": "Two drummers with years of friendship and an unusually good ear for what the other is hiding behind a laugh. There is more history here than belongs in an on-the-record scene file."
+        }
+      ],
+      "privateLink": {
+        "href": "#/person/dahlia-gutierrez",
+        "text": "DOLLY’S SPACE / OPEN HER DOSSIER FOR THE JAX SPOILER FILE ↗"
+      },
+      "handNote": "fame arrived later. they already knew where the spare cables were. — iris"
+    },
+    {
       id: "rory",
       label: "PERSON OF INTEREST",
       title: "Rory Deveraux",
